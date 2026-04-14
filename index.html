@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consonant Design System - Visual Guide</title>
+
+    <!-- Adobe Clean Font (Standard implementation for Adobe sites) -->
+    <link rel="stylesheet" href="https://use.typekit.net/xex4czq.css">
+    <!-- Base s2a-grids import -->
+    <link rel="stylesheet" href="s2a-layout-grids.css">
+    <!-- Design tokens -->
+    <link rel="stylesheet" href="s2a-tokens.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-light">
+
+
+
+    <!-- Main Layout Grid -->
+    <div class="container main-layout">
+        <div class="row">
+            <!-- Top Navigation (Sticky) -->
+            <header class="top-nav sticky-nav col-12">
+                <nav>
+                    <div class="nav-title">Tokens</div>
+                    <ul class="nav-list">
+                        <li><a href="#colors" class="active">Colors</a></li>
+                        <li><a href="#primitive-colors">Primitive Colors</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#text-styles">Text Styles</a></li>
+                        <li><a href="#spacing">Spacing</a></li>
+                        <li><a href="#radii">Border Radii</a></li>
+                        <li><a href="#blurs">Blurs</a></li>
+                        <li><a href="#layout">Layout Tokens</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="content col-12">
+
+                <!-- Header Marquee (Hero) -->
+                <header class="marquee">
+                    <h1 class="headline">Consonant Design System</h1>
+                    <p class="subtitle">A visual guide to the Adobe.com sub-atomic styling paradigm and design tokens.
+                    </p>
+                </header>
+
+                <!-- Colors Section -->
+                <section id="colors" class="token-section">
+                    <div class="section-header">
+                        <h2>Colors</h2>
+                        <p>Semantic color palettes matching standard light/dark modes.</p>
+                    </div>
+
+                    <div class="theme-controls">
+                        <span class="theme-title">Semantic Colors</span>
+                        <button class="theme-toggle" id="colorModeToggle" onclick="toggleColorMode()">Switch to Dark
+                            Mode</button>
+                    </div>
+
+                    <div id="semanticThemeContainer" class="theme-container">
+
+                        <!-- Content -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">content</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-default); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.800</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default-hover</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-default-hover); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-subtle); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.600</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">strong</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-strong); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" data-bg="knockout"
+                                        style="background: var(--color-content-knockout); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-brand); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-content-disabled); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Utility -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">utility</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">error</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-utility-error); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">red.900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Background -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">background</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box" data-bg="knockout"
+                                        style="background: var(--color-background-default); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box" data-bg="knockout"
+                                        style="background: var(--color-background-subtle); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.50</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-background-knockout); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-background-brand); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-background-disabled); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Border -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">border</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-default); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.800</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default-hover</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-default-hover); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-subtle); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.300</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">strong</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-strong); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" data-bg="knockout"
+                                        style="background: var(--color-border-knockout); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-brand); color: var(--color-background-default);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box"
+                                        style="background: var(--color-border-disabled); color: var(--color-content-default);">
+                                        <span class="swatch-inner-text">gray.400</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Primitive Colors Section -->
+                <section id="primitive-colors" class="token-section">
+                    <div class="section-header">
+                        <h2>Primitive Colors</h2>
+                        <p>Raw color palette values that feed into semantic tokens.</p>
+                    </div>
+
+                    <div class="primitive-colors-container">
+
+                        <!-- Gray -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">gray</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">25</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-25); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#fff</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">50</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-50); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#f8f8f8</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">75</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-75); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#f3f3f3</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#e9e9e9</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#e1e1e1</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--color-gray-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#dadada</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-400); color: var(--color-gray-900);">
+                                        <span class="swatch-inner-text">#c6c6c6</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-500); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#8f8f8f</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#717171</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#505050</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#292929</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#131313</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">1000</span>
+                                    <div class="swatch-box" style="background: var(--color-gray-1000); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Green -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">green</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" style="background: var(--color-green-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#edfcf1</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" style="background: var(--color-green-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#d7f7e1</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" style="background: var(--color-green-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#adeec5</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-green-400); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#6be3a2</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-green-500); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#2bd17d</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-green-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#12b867</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-green-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#0ba45d</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-green-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#079355</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-green-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#05834e</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">1000</span>
+                                    <div class="swatch-box" style="background: var(--color-green-1000); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#036e45</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blue -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">blue</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#f5f9ff</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#e5f0fe</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#cbe2fe</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-400); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#accffd</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-500); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#8eb9fc</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#729efd</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#5d89ff</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#4b75ff</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#3b63fb</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">1000</span>
+                                    <div class="swatch-box" style="background: var(--color-blue-1000); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#274dea</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Red -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">red</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" style="background: var(--color-red-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#fff6f5</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" style="background: var(--color-red-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffebe8</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" style="background: var(--color-red-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffd6d1</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-red-400); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffbcb4</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-red-500); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ff9d91</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-red-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#ff7665</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-red-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#ff513d</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-red-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#f03823</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-red-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#d73220</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Orange -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">orange</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#fff6e7</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffeccf</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffda9e</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-400); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffc15e</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-500); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffa213</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#fc7d00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#e86a00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#d45b00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#c24e00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">1000</span>
+                                    <div class="swatch-box" style="background: var(--color-orange-1000); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#a73e00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Yellow -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">yellow</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">100</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-100); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#fff8cc</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">200</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-200); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#fff197</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">300</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-300); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#ffde2c</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">400</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-400); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#f5c700</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">500</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-500); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">#e6af00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">600</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-600); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#d29500</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">700</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-700); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#c18300</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">800</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-800); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#af7400</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">900</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-900); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#9e6600</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">1000</span>
+                                    <div class="swatch-box" style="background: var(--color-yellow-1000); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#865500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transparent Black -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">transparent-black</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">04</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-04); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">4%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">08</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-08); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">8%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">12</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-12); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">12%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">16</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-16); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">16%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">24</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-24); color: var(--color-gray-800);">
+                                        <span class="swatch-inner-text">24%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">32</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-32); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">32%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">48</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-48); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">48%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">64</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--color-transparent-black-64); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">64%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transparent White -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">transparent-white</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">04</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-04); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">4%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">08</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-08); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">8%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">12</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-12); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">12%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">16</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-16); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">16%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">24</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-24); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">24%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">32</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-32); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">32%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">48</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-48); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">48%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">64</span>
+                                    <div class="swatch-box swatch-on-dark" style="background: var(--color-transparent-white-64); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">64%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Brand -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">brand</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">adobe-red</span>
+                                    <div class="swatch-box" style="background: var(--color-brand-adobe-red); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#EB1000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section id="typography" class="token-section">
+                    <div class="section-header">
+                        <h2>Typography</h2>
+                        <p>Primitive font-size tokens from the Consonant baseline (`xs` through `10xl`).</p>
+                    </div>
+
+                    <div class="type-sampler bento-card">
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-10xl</span>
+                                <span class="token-value">6rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-10xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-9xl</span>
+                                <span class="token-value">5rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-9xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-8xl</span>
+                                <span class="token-value">4.5rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-8xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-7xl</span>
+                                <span class="token-value">4rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-7xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-6xl</span>
+                                <span class="token-value">3.5rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-6xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-5xl</span>
+                                <span class="token-value">3rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-5xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-4xl</span>
+                                <span class="token-value">2.5rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-4xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-3xl</span>
+                                <span class="token-value">2rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-3xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-2xl</span>
+                                <span class="token-value">1.5rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-2xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-xl</span>
+                                <span class="token-value">1.25rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-xl);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-lg</span>
+                                <span class="token-value">1.125rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-lg);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-md</span>
+                                <span class="token-value">1rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-md);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-sm</span>
+                                <span class="token-value">0.875rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-sm);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">--font-size-xs</span>
+                                <span class="token-value">0.75rem</span>
+                            </div>
+                            <div class="font-size-sample" style="font-size: var(--font-size-xs);">A Quick Brown Fox
+                                Jumps Over the Lazy Dog.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="text-styles" class="token-section">
+                    <div class="section-header">
+                        <h2>Text Styles</h2>
+                        <p>Semantic typography definitions mapped to Consonant's scale and use cases.</p>
+
+                        <!-- Responsive Text Typography Slider -->
+                        <div class="theme-controls text-slider-controls">
+                            <label for="textScaleSlider" class="theme-title" id="textScaleLabel">Desktop Scale (1280px
+                                and up)</label>
+                            <input type="range" id="textScaleSlider" min="0" max="2" value="2"
+                                oninput="updateTextScale(this.value)" class="slider">
+                            <div class="slider-notches">
+                                <span>Mobile</span>
+                                <span>Tablet</span>
+                                <span>Desktop</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="textStylesContainer" class="type-sampler bento-card text-styles--desktop">
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Super</span>
+                                <span class="token-value">6rem (96px) / 700</span>
+                            </div>
+                            <div class="text-super">Super Hero Strategy</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Heading 1</span>
+                                <span class="token-value">5rem (80px) / 700</span>
+                            </div>
+                            <div class="text-h1">Consonant Design System</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Heading 2</span>
+                                <span class="token-value">3.5rem (56px) / 700</span>
+                            </div>
+                            <div class="text-h2">Marketing Engagement</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Heading 3</span>
+                                <span class="token-value">3rem (48px) / 700</span>
+                            </div>
+                            <div class="text-h3">Semantic Text Styles</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Heading 4</span>
+                                <span class="token-value">1.5rem (24px) / 700</span>
+                            </div>
+                            <div class="text-h4">Component Breakdown</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Paragraph</span>
+                                <span class="token-value">1rem (16px) / 400</span>
+                            </div>
+                            <p class="text-p">Standard body copy used for descriptions and general text
+                                content across the Consonant system, providing optimal readability and accessibility.
+                            </p>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Eyebrow</span>
+                                <span class="token-value">1rem (16px) / 700</span>
+                            </div>
+                            <div class="text-eyebrow">Product Offer</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Label</span>
+                                <span class="token-value">0.875rem (14px) / 700</span>
+                            </div>
+                            <div class="text-label">Input Label Target</div>
+                        </div>
+                        <div class="type-row">
+                            <div class="type-spec">
+                                <span class="token-name">Caption</span>
+                                <span class="token-value">0.75rem (12px) / 400</span>
+                            </div>
+                            <div class="text-caption">Copyright © 2026 Adobe Systems Incorporated. All rights reserved.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Spacing Section -->
+                <section id="spacing" class="token-section">
+                    <div class="section-header">
+                        <h2>Spacing</h2>
+                        <p>Rhythmic units for layout composition and margins.</p>
+                    </div>
+
+                    <div class="spacing-showcase">
+                        <!-- None -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-none</span>
+                                <span class="token-value">0px</span>
+                            </div>
+                            <div class="space-block s-none"></div>
+                        </div>
+                        <!-- 3xs -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-3xs</span>
+                                <span class="token-value">2px</span>
+                            </div>
+                            <div class="space-block s-3xs"></div>
+                        </div>
+                        <!-- 2xs -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-2xs</span>
+                                <span class="token-value">4px</span>
+                            </div>
+                            <div class="space-block s-2xs"></div>
+                        </div>
+                        <!-- xs -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-xs</span>
+                                <span class="token-value">8px</span>
+                            </div>
+                            <div class="space-block s-xs"></div>
+                        </div>
+                        <!-- sm -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-sm</span>
+                                <span class="token-value">0.75rem</span>
+                            </div>
+                            <div class="space-block s-sm"></div>
+                        </div>
+                        <!-- md -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-md</span>
+                                <span class="token-value">1rem</span>
+                            </div>
+                            <div class="space-block s-md"></div>
+                        </div>
+                        <!-- lg -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-lg</span>
+                                <span class="token-value">1.5rem</span>
+                            </div>
+                            <div class="space-block s-lg"></div>
+                        </div>
+                        <!-- xl -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-xl</span>
+                                <span class="token-value">2rem</span>
+                            </div>
+                            <div class="space-block s-xl"></div>
+                        </div>
+                        <!-- 2xl -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-2xl</span>
+                                <span class="token-value">2.5rem</span>
+                            </div>
+                            <div class="space-block s-2xl"></div>
+                        </div>
+                        <!-- 3xl -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-3xl</span>
+                                <span class="token-value">3rem</span>
+                            </div>
+                            <div class="space-block s-3xl"></div>
+                        </div>
+                        <!-- 4xl -->
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--spacing-4xl</span>
+                                <span class="token-value">4rem</span>
+                            </div>
+                            <div class="space-block s-4xl"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Shadows Section -->
+                <section id="shadows" class="token-section">
+                    <div class="section-header">
+                        <h2>Shadows</h2>
+                        <p>Elevation and depth using tailored multi-layered box shadows.</p>
+                    </div>
+
+                    <div class="shadows-grid">
+                        <div class="shadow-card-small s-sm">
+                            <div class="shadow-box"></div>
+                            <div class="token-details">
+                                <span class="token-name">--shadow-sm</span>
+                                <span class="token-value">Subtle Elevation</span>
+                            </div>
+                        </div>
+                        <div class="shadow-card-small s-md">
+                            <div class="shadow-box"></div>
+                            <div class="token-details">
+                                <span class="token-name">--shadow-md</span>
+                                <span class="token-value">Card Elevation</span>
+                            </div>
+                        </div>
+                        <div class="shadow-card-small s-lg">
+                            <div class="shadow-box"></div>
+                            <div class="token-details">
+                                <span class="token-name">--shadow-lg</span>
+                                <span class="token-value">Popover / Modal</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Border Radii Section -->
+                <section id="radii" class="token-section">
+                    <div class="section-header">
+                        <h2>Border Radii</h2>
+                        <p>Consistent corner rounding for friendly, approachable components.</p>
+                    </div>
+
+                    <div class="radii-grid">
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-sm"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-sm</span>
+                                <span class="token-value">4px</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-md"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-md</span>
+                                <span class="token-value">8px</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-lg"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-lg</span>
+                                <span class="token-value">1rem</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-xl"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-xl</span>
+                                <span class="token-value">1.5rem</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-round"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-round</span>
+                                <span class="token-value">999px</span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </section>
+
+        <!-- Blurs Section -->
+        <section id="blurs" class="token-section">
+            <div class="section-header">
+                <h2>Blurs</h2>
+                <p>Consistent sub-atomic tokens for backdrop filter blurring effects to create glassmorphism.</p>
+            </div>
+
+            <div class="blurs-grid">
+                <div class="blur-card-small">
+                    <div class="blur-demo-container b-xs">
+                        <span class="blur-overlay">Behind Blur</span>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-blur-xs</span>
+                        <span class="token-value">blur(8px)</span>
+                    </div>
+                </div>
+                <div class="blur-card-small">
+                    <div class="blur-demo-container b-sm">
+                        <span class="blur-overlay">Behind Blur</span>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-blur-sm</span>
+                        <span class="token-value">blur(16px)</span>
+                    </div>
+                </div>
+                <div class="blur-card-small">
+                    <div class="blur-demo-container b-md">
+                        <span class="blur-overlay">Behind Blur</span>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-blur-md</span>
+                        <span class="token-value">blur(32px)</span>
+                    </div>
+                </div>
+                <div class="blur-card-small">
+                    <div class="blur-demo-container b-lg">
+                        <span class="blur-overlay">Behind Blur</span>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-blur-lg</span>
+                        <span class="token-value">blur(64px)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layout Tokens Section -->
+        <section id="layout" class="token-section">
+            <div class="section-header">
+                <h2>Layout Tokens</h2>
+                <p>Tokens defining major structural spacing, primarily for horizontal rhythms and grid layouts.</p>
+            </div>
+
+            <div class="layout-grid">
+                <div class="layout-card-small">
+                    <div class="layout-demo-container">
+                        <div class="layout-box l-sm"></div>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-layout-sm</span>
+                        <span class="token-value">80px</span>
+                    </div>
+                </div>
+                <div class="layout-card-small">
+                    <div class="layout-demo-container">
+                        <div class="layout-box l-md"></div>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-layout-md</span>
+                        <span class="token-value">96px</span>
+                    </div>
+                </div>
+                <div class="layout-card-small">
+                    <div class="layout-demo-container">
+                        <div class="layout-box l-lg"></div>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-layout-lg</span>
+                        <span class="token-value">124px</span>
+                    </div>
+                </div>
+                <div class="layout-card-small">
+                    <div class="layout-demo-container">
+                        <div class="layout-box l-xl"></div>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-layout-xl</span>
+                        <span class="token-value">160px</span>
+                    </div>
+                </div>
+                <div class="layout-card-small">
+                    <div class="layout-demo-container">
+                        <div class="layout-box l-2xl"></div>
+                    </div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-layout-2xl</span>
+                        <span class="token-value">240px</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </main>
+    </div>
+    </div>
+
+    <script>
+        // Simple active state observer for sidebar
+        const sections = document.querySelectorAll('.token-section');
+        const navLinks = document.querySelectorAll('.nav-list a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -80% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Smooth scroll fallback (though CSS scroll-behavior: smooth handles most)
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100, // Offset for sticky headers if any
+                            behavior: 'smooth'
+                        });
+                        // Update history state manually
+                        history.pushState(null, null, targetId);
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Dynamic Grid Overrides -->
+    <script>
+        function toggleColorMode() {
+            const body = document.body;
+            const btn = document.getElementById('colorModeToggle');
+            if (body.classList.contains('theme-light')) {
+                body.classList.replace('theme-light', 'theme-dark');
+                btn.textContent = 'Switch to Light Mode';
+            } else {
+                body.classList.replace('theme-dark', 'theme-light');
+                btn.textContent = 'Switch to Dark Mode';
+            }
+        }
+
+        // Text Scale Responsive Slider Logic
+        function updateTextScale(val) {
+            const container = document.getElementById('textStylesContainer');
+            const label = document.getElementById('textScaleLabel');
+
+            // Remove previous scale classes
+            container.className = 'type-sampler bento-card';
+
+            // Reset token values in UI dynamically
+            const elements = [
+                { id: 'Super', desktop: '6rem (96px)', tablet: '4.5rem (72px)', mobile: '3.5rem (56px)' },
+                { id: 'Heading 1', desktop: '5rem (80px)', tablet: '3.5rem (56px)', mobile: '2.5rem (40px)' },
+                { id: 'Heading 2', desktop: '3.5rem (56px)', tablet: '2.5rem (40px)', mobile: '2rem (32px)' },
+                { id: 'Heading 3', desktop: '3rem (48px)', tablet: '2rem (32px)', mobile: '1.5rem (24px)' },
+                { id: 'Heading 4', desktop: '1.5rem (24px)', tablet: '1.25rem (20px)', mobile: '1.25rem (20px)' },
+                { id: 'Paragraph', desktop: '1.25rem (20px)', tablet: '1.125rem (18px)', mobile: '1rem (16px)' },
+                { id: 'Eyebrow', desktop: '1rem (16px)', tablet: '1rem (16px)', mobile: '1rem (16px)' },
+                { id: 'Label', desktop: '0.875rem (14px)', tablet: '0.875rem (14px)', mobile: '0.875rem (14px)' },
+                { id: 'Caption', desktop: '0.75rem (12px)', tablet: '0.75rem (12px)', mobile: '0.75rem (12px)' },
+            ];
+
+            const listItems = container.querySelectorAll('.type-row');
+
+            switch (parseInt(val)) {
+                case 0: // Mobile
+                    container.classList.add('text-styles--mobile');
+                    label.textContent = "Mobile Scale (767px and down)";
+                    updateTokenLabels(listItems, elements, 'mobile');
+                    break;
+                case 1: // Tablet
+                    container.classList.add('text-styles--tablet');
+                    label.textContent = "Tablet Scale (768px - 1279px)";
+                    updateTokenLabels(listItems, elements, 'tablet');
+                    break;
+                case 2: // Desktop
+                    container.classList.add('text-styles--desktop');
+                    label.textContent = "Desktop Scale (1280px and up)";
+                    updateTokenLabels(listItems, elements, 'desktop');
+                    break;
+            }
+        }
+
+        function updateTokenLabels(rows, elements, mode) {
+            rows.forEach((row, i) => {
+                if (i < elements.length) {
+                    const valSpan = row.querySelector('.token-value');
+                    if (valSpan) {
+                        // Preserve font weight listing, just swap size
+                        const weight = valSpan.textContent.split('/')[1] || '';
+                        valSpan.textContent = `${elements[i][mode]} ${weight ? '/ ' + weight.trim() : ''}`;
+                    }
+                }
+            });
+        }
+
+        // Add auto-resizing logic to sync slider with active media queries
+        function syncSliderToViewport() {
+            const slider = document.getElementById('textScaleSlider');
+            const width = window.innerWidth;
+
+            let targetValue = 2; // Desktop
+            if (width <= 767) {
+                targetValue = 0; // Mobile
+            } else if (width <= 1279) {
+                targetValue = 1; // Tablet
+            }
+
+            if (parseInt(slider.value) !== targetValue) {
+                slider.value = targetValue;
+                updateTextScale(targetValue);
+            }
+        }
+
+        // Listen for window resizes
+        window.addEventListener('resize', () => {
+            // Debounce slightly for performance
+            clearTimeout(window.resizeTimer);
+            window.resizeTimer = setTimeout(syncSliderToViewport, 50);
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            syncSliderToViewport();
+        });
+    </script>
+</body>
+
+</html>
