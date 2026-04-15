@@ -149,7 +149,12 @@ p {
 }
 
 .nav-list a.active {
-    background: var(--color-text-primary);
+    background: var(--btn-accent);
+    color: var(--color-text-inverse);
+}
+
+.nav-list a.active:hover {
+    background: var(--btn-accent-hover);
     color: var(--color-text-inverse);
 }
 
