@@ -29,14 +29,24 @@
                 <nav>
                     <div class="nav-title">Tokens</div>
                     <ul class="nav-list">
+                        <li><a href="#version-history">Version</a></li>
                         <li><a href="#colors" class="active">Colors</a></li>
                         <li><a href="#primitive-colors">Primitive Colors</a></li>
+                        <li><a href="#s2a-colors">S2A Semantic Colors</a></li>
                         <li><a href="#typography">Typography</a></li>
                         <li><a href="#text-styles">Text Styles</a></li>
+                        <li><a href="#s2a-typography">S2A Typography</a></li>
                         <li><a href="#spacing">Spacing</a></li>
+                        <li><a href="#s2a-spacing">S2A Spacing</a></li>
                         <li><a href="#radii">Border Radii</a></li>
+                        <li><a href="#s2a-radii">S2A Radii</a></li>
+                        <li><a href="#border-width">Border Width</a></li>
+                        <li><a href="#opacity">Opacity</a></li>
+                        <li><a href="#shadows">Shadows</a></li>
                         <li><a href="#blurs">Blurs</a></li>
                         <li><a href="#layout">Layout Tokens</a></li>
+                        <li><a href="#section-padding">Section Padding</a></li>
+                        <li><a href="#viewport-padding">Viewport Padding</a></li>
                     </ul>
                 </nav>
             </header>
@@ -50,6 +60,40 @@
                     <p class="subtitle">A visual guide to the Adobe.com sub-atomic styling paradigm and design tokens.
                     </p>
                 </header>
+
+                <!-- Version History -->
+                <section id="version-history" class="token-section">
+                    <div class="section-header">
+                        <h2>Version History</h2>
+                        <p>Token source tracking and change log for this style page.</p>
+                    </div>
+                    <table class="version-history-table bento-card">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Date</th>
+                                <th>Source Package</th>
+                                <th>Notable Changes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="version-col">0.0.13</td>
+                                <td>2026-04-22</td>
+                                <td><code>adobecom-s2a-tokens-0.0.13.tgz</code></td>
+                                <td>
+                                    <span class="change-tag">--s2a-typography-*</span>
+                                    <span class="change-tag">--s2a-spacing-*</span>
+                                    <span class="change-tag">--s2a-border-radius-*</span>
+                                    <span class="change-tag">--s2a-color-* (light/dark)</span>
+                                    <span class="change-tag">--s2a-viewport-vertical-padding-*</span>
+                                    <span class="change-tag">--s2a-blur-*</span>
+                                    <span class="change-tag">responsive token breakpoints</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
                 <!-- Colors Section -->
                 <section id="colors" class="token-section">
@@ -775,8 +819,269 @@
                             <div class="semantic-swatches">
                                 <div class="swatch-item">
                                     <span class="swatch-label">adobe-red</span>
-                                    <div class="swatch-box" style="background: var(--color-brand-adobe-red); color: var(--color-gray-25);">
-                                        <span class="swatch-inner-text">#EB1000</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-brand-adobe-red); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#eb1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">cc-3dar</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-brand-cc-3dar); color: var(--color-gray-900);">
+                                        <span class="swatch-inner-text">#99e83f</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">cc-il</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-brand-cc-il); color: var(--color-gray-900);">
+                                        <span class="swatch-inner-text">#ff9a00</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">cc-ppafx</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-brand-cc-ppafx); color: var(--color-gray-900);">
+                                        <span class="swatch-inner-text">#9999ff</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">cc-ps</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-brand-cc-ps); color: var(--color-gray-25);">
+                                        <span class="swatch-inner-text">#3a18ff</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- S2A Semantic Colors Section -->
+                <section id="s2a-colors" class="token-section">
+                    <div class="section-header">
+                        <h2>S2A Semantic Colors</h2>
+                        <p>Semantic color tokens using the <code>--s2a-color-*</code> namespace, toggled via <code>data-theme</code> attribute.</p>
+                    </div>
+
+                    <div class="theme-controls">
+                        <span class="theme-title">S2A Semantic Colors</span>
+                        <button class="theme-toggle" id="s2aColorModeToggle" onclick="toggleS2AColorMode()">Switch to Dark Mode</button>
+                    </div>
+
+                    <div id="s2aThemeContainer" data-theme="light" class="theme-container">
+
+                        <!-- Background -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">background</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-background-default); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-background-subtle); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.50</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-background-brand); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-background-knockout); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">inverse</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-background-inverse); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-background-disabled); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.50</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">utility-error</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-background-utility-error); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">red.900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">content</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-default); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-content-subtle); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">black.64%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">strong</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-strong); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-content-knockout); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">inverse</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-content-inverse); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-brand); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-disabled); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.400</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">utility-error</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-utility-error); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">red.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">title</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-title); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">→default</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subheading</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-subheading); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">body-subtle</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-content-body-subtle); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">→subtle</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">body-strong</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-body-strong); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">→strong</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">eyebrow</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-content-eyebrow); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">black.64%</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">label</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-content-label); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">→default</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">caption</span>
+                                    <div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-content-caption); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">→subtle</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Border -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">border</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-default); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">gray.800</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">subtle</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-subtle); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.300</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">strong</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-strong); color: var(--s2a-color-background-default);">
+                                        <span class="swatch-inner-text">gray.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-knockout); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">gray.1000</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">inverse</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-border-inverse); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">brand</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-brand); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">brand.adobe-red</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">disabled</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-disabled); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.400</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">utility-error</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-utility-error); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">red.900</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Focus Ring -->
+                        <div class="semantic-row">
+                            <div class="semantic-row-label">focus-ring</div>
+                            <div class="semantic-swatches">
+                                <div class="swatch-item">
+                                    <span class="swatch-label">default</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-focus-ring-default); color: var(--s2a-color-gray-25);">
+                                        <span class="swatch-inner-text">blue.900</span>
+                                    </div>
+                                </div>
+                                <div class="swatch-item">
+                                    <span class="swatch-label">knockout</span>
+                                    <div class="swatch-box" data-bg="knockout" style="background: var(--s2a-color-focus-ring-knockout); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.25</span>
                                     </div>
                                 </div>
                             </div>
@@ -996,6 +1301,115 @@
                     </div>
                 </section>
 
+                <!-- S2A Responsive Typography Section -->
+                <section id="s2a-typography" class="token-section">
+                    <div class="section-header">
+                        <h2>S2A Typography</h2>
+                        <p>Responsive semantic text styles from <code>--s2a-typography-*</code> tokens. These automatically scale across mobile (base), tablet (1024px+), desktop (1280px+), and HD (1441px+) breakpoints.</p>
+                    </div>
+
+                    <div class="type-sampler bento-card">
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Super</span>
+                                <span class="token-value">--s2a-typography-font-size-super</span>
+                            </div>
+                            <div class="s2a-text-super">Design at Scale</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 1</span>
+                                <span class="token-value">--s2a-typography-font-size-title-1</span>
+                            </div>
+                            <div class="s2a-text-title-1">Adobe Creative Cloud</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 2</span>
+                                <span class="token-value">--s2a-typography-font-size-title-2</span>
+                            </div>
+                            <div class="s2a-text-title-2">Marketing Engagement</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 3</span>
+                                <span class="token-value">--s2a-typography-font-size-title-3</span>
+                            </div>
+                            <div class="s2a-text-title-3">Semantic Text Styles</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 4</span>
+                                <span class="token-value">--s2a-typography-font-size-title-4</span>
+                            </div>
+                            <div class="s2a-text-title-4">Component Breakdown</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 5</span>
+                                <span class="token-value">--s2a-typography-font-size-title-5</span>
+                            </div>
+                            <div class="s2a-text-title-5">Design Token Reference</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Title 6</span>
+                                <span class="token-value">--s2a-typography-font-size-title-6</span>
+                            </div>
+                            <div class="s2a-text-title-6">Section Label</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Body LG</span>
+                                <span class="token-value">--s2a-typography-font-size-body-lg</span>
+                            </div>
+                            <p class="s2a-text-body-lg">Standard body copy used for descriptions and general text content across the Consonant system.</p>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Body MD</span>
+                                <span class="token-value">--s2a-typography-font-size-body-md</span>
+                            </div>
+                            <p class="s2a-text-body-md">Standard body copy used for descriptions and general text content across the Consonant system.</p>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Body SM</span>
+                                <span class="token-value">--s2a-typography-font-size-body-sm</span>
+                            </div>
+                            <p class="s2a-text-body-sm">Supporting text for secondary information and UI metadata.</p>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Body XS</span>
+                                <span class="token-value">--s2a-typography-font-size-body-xs</span>
+                            </div>
+                            <p class="s2a-text-body-xs">Fine print and auxiliary information at smallest scale.</p>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Eyebrow</span>
+                                <span class="token-value">--s2a-typography-font-size-eyebrow</span>
+                            </div>
+                            <div class="s2a-text-eyebrow">Product Category</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Label</span>
+                                <span class="token-value">--s2a-typography-font-size-label</span>
+                            </div>
+                            <div class="s2a-text-label">Input Field Label</div>
+                        </div>
+                        <div class="s2a-type-row">
+                            <div class="s2a-type-spec">
+                                <span class="token-name">Caption</span>
+                                <span class="token-value">--s2a-typography-font-size-caption</span>
+                            </div>
+                            <div class="s2a-text-caption">Copyright © 2026 Adobe Systems Incorporated. All rights reserved.</div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Spacing Section -->
                 <section id="spacing" class="token-section">
                     <div class="section-header">
@@ -1095,6 +1509,87 @@
                     </div>
                 </section>
 
+                <!-- S2A Spacing Section -->
+                <section id="s2a-spacing" class="token-section">
+                    <div class="section-header">
+                        <h2>S2A Spacing</h2>
+                        <p>Semantic spacing tokens from the <code>--s2a-spacing-*</code> namespace, mapped from numeric primitives.</p>
+                    </div>
+
+                    <div class="spacing-showcase">
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-none</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">0px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-none"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-2xs</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">4px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-2xs"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-xs</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">8px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-xs"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-sm</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">12px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-sm"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-md</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">16px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-md"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-lg</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">24px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-lg"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-xl</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">32px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-xl"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-2xl</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">40px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-2xl"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-3xl</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">48px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-3xl"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <span class="token-name">--s2a-spacing-4xl</span>
+                                <span class="token-value" style="color: var(--color-text-secondary);">64px</span>
+                            </div>
+                            <div class="s2a-space-block s2a-s-4xl"></div>
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Shadows Section -->
                 <section id="shadows" class="token-section">
                     <div class="section-header">
@@ -1124,6 +1619,13 @@
                                 <span class="token-value">Popover / Modal</span>
                             </div>
                         </div>
+                        <div class="shadow-card-small s-xl">
+                            <div class="shadow-box"></div>
+                            <div class="token-details">
+                                <span class="token-name">--shadow-xl</span>
+                                <span class="token-value">Deep Elevation</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -1136,31 +1638,52 @@
 
                     <div class="radii-grid">
                         <div class="radius-card-small">
+                            <div class="radius-demo r-none"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-none</span>
+                                <span class="token-value">0</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-2xs"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-2xs</span>
+                                <span class="token-value">2px</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="radius-demo r-xs"></div>
+                            <div class="token-details">
+                                <span class="token-name">--radius-xs</span>
+                                <span class="token-value">4px</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
                             <div class="radius-demo r-sm"></div>
                             <div class="token-details">
                                 <span class="token-name">--radius-sm</span>
-                                <span class="token-value">4px</span>
+                                <span class="token-value">8px</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
                             <div class="radius-demo r-md"></div>
                             <div class="token-details">
                                 <span class="token-name">--radius-md</span>
-                                <span class="token-value">8px</span>
+                                <span class="token-value">16px</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
                             <div class="radius-demo r-lg"></div>
                             <div class="token-details">
                                 <span class="token-name">--radius-lg</span>
-                                <span class="token-value">1rem</span>
+                                <span class="token-value">32px</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
                             <div class="radius-demo r-xl"></div>
                             <div class="token-details">
                                 <span class="token-name">--radius-xl</span>
-                                <span class="token-value">1.5rem</span>
+                                <span class="token-value">24px</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
@@ -1172,6 +1695,130 @@
                         </div>
                     </div>
         </div>
+        </section>
+
+        <!-- S2A Border Radii Section -->
+        <section id="s2a-radii" class="token-section">
+            <div class="section-header">
+                <h2>S2A Border Radii</h2>
+                <p>Semantic border radius tokens from the <code>--s2a-border-radius-*</code> namespace.</p>
+            </div>
+
+            <div class="radii-grid">
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-none"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-none</span>
+                        <span class="token-value">0</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-2xs"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-2xs</span>
+                        <span class="token-value">2px</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-xs"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-xs</span>
+                        <span class="token-value">4px</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-sm"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-sm</span>
+                        <span class="token-value">8px</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-md"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-md</span>
+                        <span class="token-value">16px</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-lg"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-lg</span>
+                        <span class="token-value">32px</span>
+                    </div>
+                </div>
+                <div class="radius-card-small">
+                    <div class="s2a-radius-demo s2a-r-round"></div>
+                    <div class="token-details">
+                        <span class="token-name">--s2a-border-radius-round</span>
+                        <span class="token-value">999px</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Border Width Section -->
+        <section id="border-width" class="token-section">
+            <div class="section-header">
+                <h2>Border Width</h2>
+                <p>Semantic border width tokens for consistent stroke weights.</p>
+            </div>
+
+            <div class="border-width-grid">
+                <div class="border-width-item">
+                    <div class="border-width-demo bw-sm"></div>
+                    <div class="token-details">
+                        <span class="token-name">--border-width-sm</span>
+                        <span class="token-value">1px</span>
+                    </div>
+                </div>
+                <div class="border-width-item">
+                    <div class="border-width-demo bw-md"></div>
+                    <div class="token-details">
+                        <span class="token-name">--border-width-md</span>
+                        <span class="token-value">2px</span>
+                    </div>
+                </div>
+                <div class="border-width-item">
+                    <div class="border-width-demo bw-lg"></div>
+                    <div class="token-details">
+                        <span class="token-name">--border-width-lg</span>
+                        <span class="token-value">4px</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opacity Section -->
+        <section id="opacity" class="token-section">
+            <div class="section-header">
+                <h2>Opacity</h2>
+                <p>Semantic opacity tokens for scrims, disabled states, and overlays.</p>
+            </div>
+
+            <div class="opacity-grid">
+                <div class="opacity-item">
+                    <div class="opacity-demo" style="opacity: var(--opacity-scrim-subtle);"></div>
+                    <div class="token-details">
+                        <span class="token-name">--opacity-scrim-subtle</span>
+                        <span class="token-value">0.32 — Subtle scrim</span>
+                    </div>
+                </div>
+                <div class="opacity-item">
+                    <div class="opacity-demo" style="opacity: var(--opacity-disabled);"></div>
+                    <div class="token-details">
+                        <span class="token-name">--opacity-disabled</span>
+                        <span class="token-value">0.48 — Disabled state</span>
+                    </div>
+                </div>
+                <div class="opacity-item">
+                    <div class="opacity-demo" style="opacity: var(--opacity-scrim-strong);"></div>
+                    <div class="token-details">
+                        <span class="token-name">--opacity-scrim-strong</span>
+                        <span class="token-value">0.64 — Strong scrim</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Blurs Section -->
@@ -1277,6 +1924,185 @@
             </div>
         </section>
 
+        <!-- Section Padding Section -->
+        <section id="section-padding" class="token-section">
+            <div class="section-header">
+                <h2>Section Padding</h2>
+                <p>Responsive vertical padding tokens for page sections. Values update at each breakpoint: desktop (≥1280px), tablet (≤1279px), mobile (≤767px).</p>
+            </div>
+
+            <div class="padding-reference-grid">
+                <div class="padding-reference-card">
+                    <div class="section-header" style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <strong style="font-size: 0.875rem;">Tablet (≤1279px)</strong>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-none</span>
+                        <span class="padding-scale-value">0px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-xs</span>
+                        <span class="padding-scale-value">40px (spacing-2xl)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-sm</span>
+                        <span class="padding-scale-value">64px (spacing-4xl)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-md</span>
+                        <span class="padding-scale-value">80px (layout-sm)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-lg</span>
+                        <span class="padding-scale-value">124px (layout-lg)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-xl</span>
+                        <span class="padding-scale-value">160px (layout-xl)</span>
+                    </div>
+                </div>
+                <div class="padding-reference-card">
+                    <div class="section-header" style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <strong style="font-size: 0.875rem;">Mobile (≤767px)</strong>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-none</span>
+                        <span class="padding-scale-value">0px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-xs</span>
+                        <span class="padding-scale-value">24px (spacing-lg)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-sm</span>
+                        <span class="padding-scale-value">32px (spacing-xl)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-md</span>
+                        <span class="padding-scale-value">40px (spacing-2xl)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-lg</span>
+                        <span class="padding-scale-value">64px (spacing-4xl)</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--section-padding-xl</span>
+                        <span class="padding-scale-value">80px (layout-sm)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Viewport Vertical Padding Section -->
+        <section id="viewport-padding" class="token-section">
+            <div class="section-header">
+                <h2>Viewport Vertical Padding</h2>
+                <p>Responsive viewport-level vertical padding tokens from <code>--s2a-viewport-vertical-padding-*</code>. These scale across all four breakpoints.</p>
+            </div>
+
+            <div class="padding-reference-grid">
+                <div class="padding-reference-card">
+                    <div class="section-header" style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <strong style="font-size: 0.875rem;">Mobile (base)</strong>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-none</span>
+                        <span class="padding-scale-value">0px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-2xs</span>
+                        <span class="padding-scale-value">16px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xs</span>
+                        <span class="padding-scale-value">24px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-sm</span>
+                        <span class="padding-scale-value">32px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-md</span>
+                        <span class="padding-scale-value">40px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-lg</span>
+                        <span class="padding-scale-value">64px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xl</span>
+                        <span class="padding-scale-value">80px</span>
+                    </div>
+                </div>
+                <div class="padding-reference-card">
+                    <div class="section-header" style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <strong style="font-size: 0.875rem;">Tablet (≥1024px)</strong>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-none</span>
+                        <span class="padding-scale-value">0px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-2xs</span>
+                        <span class="padding-scale-value">32px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xs</span>
+                        <span class="padding-scale-value">40px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-sm</span>
+                        <span class="padding-scale-value">64px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-md</span>
+                        <span class="padding-scale-value">80px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-lg</span>
+                        <span class="padding-scale-value">124px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xl</span>
+                        <span class="padding-scale-value">160px</span>
+                    </div>
+                </div>
+                <div class="padding-reference-card">
+                    <div class="section-header" style="border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                        <strong style="font-size: 0.875rem;">Desktop (≥1280px) & HD (≥1441px)</strong>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-none</span>
+                        <span class="padding-scale-value">0px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-2xs</span>
+                        <span class="padding-scale-value">32px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xs</span>
+                        <span class="padding-scale-value">64px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-sm</span>
+                        <span class="padding-scale-value">80px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-md</span>
+                        <span class="padding-scale-value">124px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-lg</span>
+                        <span class="padding-scale-value">160px</span>
+                    </div>
+                    <div class="padding-scale-row">
+                        <span class="padding-scale-name">--s2a-viewport-vertical-padding-xl</span>
+                        <span class="padding-scale-value">240px</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         </main>
     </div>
     </div>
@@ -1338,6 +2164,20 @@
                 btn.textContent = 'Switch to Light Mode';
             } else {
                 body.classList.replace('theme-dark', 'theme-light');
+                btn.textContent = 'Switch to Dark Mode';
+            }
+        }
+
+        function toggleS2AColorMode() {
+            const container = document.getElementById('s2aThemeContainer');
+            const btn = document.getElementById('s2aColorModeToggle');
+            if (container.getAttribute('data-theme') === 'light') {
+                container.setAttribute('data-theme', 'dark');
+                container.style.background = 'var(--s2a-color-gray-900)';
+                btn.textContent = 'Switch to Light Mode';
+            } else {
+                container.setAttribute('data-theme', 'light');
+                container.style.background = '';
                 btn.textContent = 'Switch to Dark Mode';
             }
         }
