@@ -230,8 +230,8 @@
     --s2a-spacing-240: 240px;
 
     /* Font Family */
-    --s2a-font-family-adobe-clean: "Adobe Clean";
-    --s2a-font-family-adobe-clean-display: "Adobe Clean Display";
+    --s2a-font-family-adobe-clean: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
+    --s2a-font-family-adobe-clean-display: 'Adobe Clean Display', adobe-clean-display, 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
 
     /* Font Letter Spacing */
     --s2a-font-letter-spacing-0: 0;
