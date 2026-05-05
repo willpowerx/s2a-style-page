@@ -1,15 +1,12 @@
 /* =========================================
-   s2a Design Tokens — v0.0.14
-   Source: adobecom-s2a-tokens-0.0.14.tgz
-   Last verified: 2026-04-28
+   s2a Design Tokens — v0.0.16
+   Source: adobecom-s2a-tokens-0.0.16.tgz
+   Last verified: 2026-05-05
 
    Local extensions beyond the package:
-     - --s2a-font-letter-spacing-neg-1 (-1px) extra primitive
-     - --s2a-font-letter-spacing-3xl maps to neg-1 (vs neg-0_96 in package)
-     - Full --s2a-layout-* scale (sm/md/lg/xl/2xl)
-     - Full --s2a-spacing-* semantic scale
+     - Full font-family stacks (package ships single font name only)
      - --s2a-router-card-*, --s2a-app-card-*, --s2a-product-lockup-*,
-       --s2a-layout-rich-media-* retained locally (DESIGN ONLY in 0.0.14)
+       --s2a-layout-rich-media-* retained locally (DESIGN ONLY since 0.0.14)
    ========================================= */
 
 
@@ -229,27 +226,22 @@
     --s2a-spacing-160: 160px;
     --s2a-spacing-240: 240px;
 
-    /* Font Family */
+    /* Font Family — local extension: full stack (package ships single name) */
     --s2a-font-family-adobe-clean: 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
     --s2a-font-family-adobe-clean-display: 'Adobe Clean Display', adobe-clean-display, 'Adobe Clean', adobe-clean, 'Trebuchet MS', sans-serif;
 
     /* Font Letter Spacing */
-    --s2a-font-letter-spacing-0: 0;
     --s2a-font-letter-spacing-neg-3_84: -3.84px;
     --s2a-font-letter-spacing-neg-3_2: -3.2px;
     --s2a-font-letter-spacing-neg-2_88: -2.88px;
     --s2a-font-letter-spacing-neg-1_68: -1.68px;
     --s2a-font-letter-spacing-neg-1_44: -1.44px;
-    --s2a-font-letter-spacing-neg-1_2: -1.2px;
-    --s2a-font-letter-spacing-neg-1: -1px;        /* local extension */
+    --s2a-font-letter-spacing-neg-1: -1px;
     --s2a-font-letter-spacing-neg-0_96: -0.96px;
     --s2a-font-letter-spacing-neg-0_48: -0.48px;
     --s2a-font-letter-spacing-neg-0_2: -0.2px;
     --s2a-font-letter-spacing-neg-0_16: -0.16px;
-    --s2a-font-letter-spacing-0_12: 0.12px;
-    --s2a-font-letter-spacing-0_14: 0.14px;
-    --s2a-font-letter-spacing-0_16: 0.16px;
-    --s2a-font-letter-spacing-0_24: 0.24px;
+    --s2a-font-letter-spacing-0: 0;
 
     /* Font Line Height */
     --s2a-font-line-height-16: 16px;
@@ -327,6 +319,7 @@
 
     /* Spacing */
     --s2a-spacing-none: var(--s2a-spacing-0);
+    --s2a-spacing-3xs: var(--s2a-spacing-2);
     --s2a-spacing-2xs: var(--s2a-spacing-4);
     --s2a-spacing-xs: var(--s2a-spacing-8);
     --s2a-spacing-sm: var(--s2a-spacing-12);
@@ -354,22 +347,17 @@
     --s2a-font-family-eyebrow: var(--s2a-font-family-adobe-clean);
     --s2a-font-family-caption: var(--s2a-font-family-adobe-clean);
 
-    /* Font Letter Spacing */
+    /* Font Letter Spacing — 0.0.16: 7xl–11xl removed; 2xl–6xl remapped */
     --s2a-font-letter-spacing-xs: var(--s2a-font-letter-spacing-neg-3_84);
     --s2a-font-letter-spacing-sm: var(--s2a-font-letter-spacing-neg-3_2);
     --s2a-font-letter-spacing-md: var(--s2a-font-letter-spacing-neg-2_88);
     --s2a-font-letter-spacing-lg: var(--s2a-font-letter-spacing-neg-1_68);
     --s2a-font-letter-spacing-xl: var(--s2a-font-letter-spacing-neg-1_44);
-    --s2a-font-letter-spacing-2xl: var(--s2a-font-letter-spacing-neg-1_2);
-    --s2a-font-letter-spacing-3xl: var(--s2a-font-letter-spacing-neg-1);  /* local: neg-1 vs neg-0_96 in pkg */
-    --s2a-font-letter-spacing-4xl: var(--s2a-font-letter-spacing-neg-0_96);
-    --s2a-font-letter-spacing-5xl: var(--s2a-font-letter-spacing-neg-0_48);
-    --s2a-font-letter-spacing-6xl: var(--s2a-font-letter-spacing-neg-0_2);
-    --s2a-font-letter-spacing-7xl: var(--s2a-font-letter-spacing-0);
-    --s2a-font-letter-spacing-8xl: var(--s2a-font-letter-spacing-0_12);
-    --s2a-font-letter-spacing-9xl: var(--s2a-font-letter-spacing-0_14);
-    --s2a-font-letter-spacing-10xl: var(--s2a-font-letter-spacing-0_16);
-    --s2a-font-letter-spacing-11xl: var(--s2a-font-letter-spacing-0_24);
+    --s2a-font-letter-spacing-2xl: var(--s2a-font-letter-spacing-neg-1);
+    --s2a-font-letter-spacing-3xl: var(--s2a-font-letter-spacing-neg-0_96);
+    --s2a-font-letter-spacing-4xl: var(--s2a-font-letter-spacing-neg-0_48);
+    --s2a-font-letter-spacing-5xl: var(--s2a-font-letter-spacing-neg-0_2);
+    --s2a-font-letter-spacing-6xl: var(--s2a-font-letter-spacing-0);
 
     /* Font Line Height */
     --s2a-font-line-height-2xs: var(--s2a-font-line-height-16);
@@ -655,7 +643,7 @@
     --s2a-typography-font-size-title-2: var(--s2a-font-size-3xl);
     --s2a-typography-font-size-title-3: var(--s2a-font-size-2xl);
     --s2a-typography-font-size-title-4: var(--s2a-font-size-xl);
-    --s2a-typography-font-size-title-5: var(--s2a-font-size-xl);
+    --s2a-typography-font-size-title-5: var(--s2a-font-size-lg);
     --s2a-typography-font-size-title-6: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-lg: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-md: var(--s2a-font-size-md);
@@ -667,18 +655,18 @@
 
     --s2a-typography-letter-spacing-super: var(--s2a-font-letter-spacing-lg);
     --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-lg);
-    --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-4xl);
-    --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-3xl);
+    --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-4xl);
+    --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-4xl);
+    --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-5xl);
     --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-7xl);
-    --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-10xl);
-    --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-9xl);
-    --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-7xl);
-    --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-10xl);
-    --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-7xl);
-    --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-11xl);
+    --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-6xl);
 
     --s2a-typography-line-height-super: var(--s2a-font-line-height-3xl);
     --s2a-typography-line-height-title-1: var(--s2a-font-line-height-xl);
@@ -753,17 +741,17 @@
         --s2a-typography-letter-spacing-super: var(--s2a-font-letter-spacing-md);
         --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-sm);
         --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-xl);
-        --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-5xl);
-        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-5xl);
-        --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-5xl);
+        --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-4xl);
+        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-4xl);
+        --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-4xl);
         --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
-        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-9xl);
-        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-11xl);
+        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-6xl);
 
         --s2a-typography-line-height-super: var(--s2a-font-line-height-4xl);
         --s2a-typography-line-height-title-1: var(--s2a-font-line-height-3xl);
@@ -840,22 +828,22 @@
         --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-sm);
         --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-lg);
         --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-xl);
-        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-3xl);
-        --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-4xl);
+        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-2xl);
+        --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-3xl);
         --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
-        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-9xl);
-        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-8xl);
-        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-11xl);
+        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-6xl);
 
         --s2a-typography-line-height-super: var(--s2a-font-line-height-6xl);
         --s2a-typography-line-height-title-1: var(--s2a-font-line-height-5xl);
         --s2a-typography-line-height-title-2: var(--s2a-font-line-height-3xl);
         --s2a-typography-line-height-title-3: var(--s2a-font-line-height-2xl);
-        --s2a-typography-line-height-title-4: var(--s2a-font-line-height-xl);
+        --s2a-typography-line-height-title-4: var(--s2a-font-line-height-lg);
         --s2a-typography-line-height-title-5: var(--s2a-font-line-height-md);
         --s2a-typography-line-height-title-6: var(--s2a-font-line-height-xs);
         --s2a-typography-line-height-body-lg: var(--s2a-font-line-height-md);
@@ -926,22 +914,22 @@
         --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-sm);
         --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-lg);
         --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-xl);
-        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-3xl);
+        --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-2xl);
         --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-4xl);
         --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
-        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-9xl);
-        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-8xl);
-        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-10xl);
-        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-7xl);
-        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-11xl);
+        --s2a-typography-letter-spacing-body-lg: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-md: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-sm: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-body-xs: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-eyebrow: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-label: var(--s2a-font-letter-spacing-6xl);
+        --s2a-typography-letter-spacing-caption: var(--s2a-font-letter-spacing-6xl);
 
         --s2a-typography-line-height-super: var(--s2a-font-line-height-6xl);
         --s2a-typography-line-height-title-1: var(--s2a-font-line-height-5xl);
         --s2a-typography-line-height-title-2: var(--s2a-font-line-height-3xl);
         --s2a-typography-line-height-title-3: var(--s2a-font-line-height-2xl);
-        --s2a-typography-line-height-title-4: var(--s2a-font-line-height-xl);
+        --s2a-typography-line-height-title-4: var(--s2a-font-line-height-lg);
         --s2a-typography-line-height-title-5: var(--s2a-font-line-height-md);
         --s2a-typography-line-height-title-6: var(--s2a-font-line-height-xs);
         --s2a-typography-line-height-body-lg: var(--s2a-font-line-height-md);

@@ -53,7 +53,7 @@
                 <!-- Header Marquee (Hero) -->
                 <header class="marquee">
                     <h1 class="headline">S2A Design Tokens</h1>
-                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.14</p>
+                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.16</p>
                 </header>
 
                 <!-- ─────────────────────────────────────────────
@@ -75,28 +75,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="version-col">0.0.14</td>
-                                <td>2026-04-28</td>
-                                <td><code>adobecom-s2a-tokens-0.0.14.tgz</code></td>
+                                <td class="version-col">0.0.16</td>
+                                <td>2026-05-05</td>
+                                <td><code>adobecom-s2a-tokens-0.0.16.tgz</code></td>
                                 <td>
-                                    <span class="change-tag">--s2a-typography-*</span>
-                                    <span class="change-tag">--s2a-spacing-*</span>
-                                    <span class="change-tag">--s2a-border-radius-*</span>
-                                    <span class="change-tag">--s2a-color-* (light/dark)</span>
-                                    <span class="change-tag">--s2a-viewport-vertical-padding-*</span>
-                                    <span class="change-tag">--s2a-blur-*</span>
-                                    <span class="change-tag">responsive token breakpoints</span>
+                                    <span class="change-tag">letter-spacing ramp restructure (2xl–6xl remapped, 7xl–11xl removed)</span>
+                                    <span class="change-tag">--s2a-spacing-3xs added</span>
+                                    <span class="change-tag">title-5 mobile font-size fix (20px → 18px)</span>
+                                    <span class="change-tag">title-4 line-height fix across lg/xl breakpoints (xl → lg)</span>
+                                    <span class="change-tag">body/label/caption/eyebrow letter-spacing normalized to 0 across all breakpoints</span>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="version-notes">
                         <p class="version-note-item"><strong>Local extensions</strong> beyond the package:
-                            <code>--s2a-font-letter-spacing-neg-1</code> (−1px extra primitive);
-                            <code>--s2a-font-letter-spacing-3xl</code> maps to neg-1 (vs neg-0_96 in package);
-                            Full <code>--s2a-layout-*</code> scale; Full <code>--s2a-spacing-*</code> semantic scale;
+                            Full font-family stacks for <code>--s2a-font-family-*</code>;
                             <code>--s2a-router-card-*</code>, <code>--s2a-app-card-*</code>, <code>--s2a-product-lockup-*</code>,
-                            <code>--s2a-layout-rich-media-*</code> retained locally (design-only in 0.0.14).
+                            <code>--s2a-layout-rich-media-*</code> retained locally (DESIGN ONLY).
                         </p>
                     </div>
                 </section>
@@ -315,6 +311,12 @@
                                 <div class="swatch-item"><span class="swatch-label">800</span><div class="swatch-box" style="background:#079355; color:#fff;"><span class="swatch-inner-text">#079355</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">900</span><div class="swatch-box" style="background:#05834e; color:#fff;"><span class="swatch-inner-text">#05834e</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">1000</span><div class="swatch-box" style="background:#036e45; color:#fff;"><span class="swatch-inner-text">#036e45</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1100</span><div class="swatch-box" style="background:#025d3c; color:#fff;"><span class="swatch-inner-text">#025d3c</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1200</span><div class="swatch-box" style="background:#014c34; color:#fff;"><span class="swatch-inner-text">#014c34</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1300</span><div class="swatch-box" style="background:#003d2c; color:#fff;"><span class="swatch-inner-text">#003d2c</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1400</span><div class="swatch-box" style="background:#002e22; color:#fff;"><span class="swatch-inner-text">#002e22</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1500</span><div class="swatch-box" style="background:#002119; color:#fff;"><span class="swatch-inner-text">#002119</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1600</span><div class="swatch-box" style="background:#000f0c; color:#fff;"><span class="swatch-inner-text">#000f0c</span></div></div>
                             </div>
                         </div>
 
@@ -332,6 +334,12 @@
                                 <div class="swatch-item"><span class="swatch-label">800</span><div class="swatch-box" style="background:#4b75ff; color:#fff;"><span class="swatch-inner-text">#4b75ff</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">900</span><div class="swatch-box" style="background:#3b63fb; color:#fff;"><span class="swatch-inner-text">#3b63fb</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">1000</span><div class="swatch-box" style="background:#274dea; color:#fff;"><span class="swatch-inner-text">#274dea</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1100</span><div class="swatch-box" style="background:#1d3ecf; color:#fff;"><span class="swatch-inner-text">#1d3ecf</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1200</span><div class="swatch-box" style="background:#1532ad; color:#fff;"><span class="swatch-inner-text">#1532ad</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1300</span><div class="swatch-box" style="background:#10288c; color:#fff;"><span class="swatch-inner-text">#10288c</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1400</span><div class="swatch-box" style="background:#0c1f69; color:#fff;"><span class="swatch-inner-text">#0c1f69</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1500</span><div class="swatch-box" style="background:#0e1843; color:#fff;"><span class="swatch-inner-text">#0e1843</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1600</span><div class="swatch-box" style="background:#070b1e; color:#fff;"><span class="swatch-inner-text">#070b1e</span></div></div>
                             </div>
                         </div>
 
@@ -349,6 +357,12 @@
                                 <div class="swatch-item"><span class="swatch-label">800</span><div class="swatch-box" style="background:#f03823; color:#fff;"><span class="swatch-inner-text">#f03823</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">900</span><div class="swatch-box" style="background:#d73220; color:#fff;"><span class="swatch-inner-text">#d73220</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">1000</span><div class="swatch-box" style="background:#b72818; color:#fff;"><span class="swatch-inner-text">#b72818</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1100</span><div class="swatch-box" style="background:#9c2113; color:#fff;"><span class="swatch-inner-text">#9c2113</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1200</span><div class="swatch-box" style="background:#811b0e; color:#fff;"><span class="swatch-inner-text">#811b0e</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1300</span><div class="swatch-box" style="background:#68150a; color:#fff;"><span class="swatch-inner-text">#68150a</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1400</span><div class="swatch-box" style="background:#501006; color:#fff;"><span class="swatch-inner-text">#501006</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1500</span><div class="swatch-box" style="background:#3b0b04; color:#fff;"><span class="swatch-inner-text">#3b0b04</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1600</span><div class="swatch-box" style="background:#1d0502; color:#fff;"><span class="swatch-inner-text">#1d0502</span></div></div>
                             </div>
                         </div>
 
@@ -366,6 +380,12 @@
                                 <div class="swatch-item"><span class="swatch-label">800</span><div class="swatch-box" style="background:#d45b00; color:#fff;"><span class="swatch-inner-text">#d45b00</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">900</span><div class="swatch-box" style="background:#c24e00; color:#fff;"><span class="swatch-inner-text">#c24e00</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">1000</span><div class="swatch-box" style="background:#a73e00; color:#fff;"><span class="swatch-inner-text">#a73e00</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1100</span><div class="swatch-box" style="background:#903300; color:#fff;"><span class="swatch-inner-text">#903300</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1200</span><div class="swatch-box" style="background:#762900; color:#fff;"><span class="swatch-inner-text">#762900</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1300</span><div class="swatch-box" style="background:#5f2000; color:#fff;"><span class="swatch-inner-text">#5f2000</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1400</span><div class="swatch-box" style="background:#491800; color:#fff;"><span class="swatch-inner-text">#491800</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1500</span><div class="swatch-box" style="background:#341200; color:#fff;"><span class="swatch-inner-text">#341200</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1600</span><div class="swatch-box" style="background:#190800; color:#fff;"><span class="swatch-inner-text">#190800</span></div></div>
                             </div>
                         </div>
 
@@ -383,6 +403,12 @@
                                 <div class="swatch-item"><span class="swatch-label">800</span><div class="swatch-box" style="background:#af7400; color:#fff;"><span class="swatch-inner-text">#af7400</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">900</span><div class="swatch-box" style="background:#9e6600; color:#fff;"><span class="swatch-inner-text">#9e6600</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">1000</span><div class="swatch-box" style="background:#865500; color:#fff;"><span class="swatch-inner-text">#865500</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1100</span><div class="swatch-box" style="background:#724800; color:#fff;"><span class="swatch-inner-text">#724800</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1200</span><div class="swatch-box" style="background:#5d3b00; color:#fff;"><span class="swatch-inner-text">#5d3b00</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1300</span><div class="swatch-box" style="background:#4b2f00; color:#fff;"><span class="swatch-inner-text">#4b2f00</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1400</span><div class="swatch-box" style="background:#382300; color:#fff;"><span class="swatch-inner-text">#382300</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1500</span><div class="swatch-box" style="background:#281900; color:#fff;"><span class="swatch-inner-text">#281900</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">1600</span><div class="swatch-box" style="background:#120b00; color:#fff;"><span class="swatch-inner-text">#120b00</span></div></div>
                             </div>
                         </div>
 
@@ -398,6 +424,10 @@
                                 <div class="swatch-item"><span class="swatch-label">32</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-32); color:#fff;"><span class="swatch-inner-text">32%</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">48</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-48); color:#fff;"><span class="swatch-inner-text">48%</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">64</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-64); color:#fff;"><span class="swatch-inner-text">64%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">72</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-72); color:#fff;"><span class="swatch-inner-text">72%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">80</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-80); color:#fff;"><span class="swatch-inner-text">80%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">88</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-88); color:#fff;"><span class="swatch-inner-text">88%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">96</span><div class="swatch-box swatch-checkerboard" style="background: var(--s2a-color-transparent-black-96); color:#fff;"><span class="swatch-inner-text">96%</span></div></div>
                             </div>
                         </div>
 
@@ -413,6 +443,10 @@
                                 <div class="swatch-item"><span class="swatch-label">32</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-32);"><span class="swatch-inner-text" style="color:#fff;">32%</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">48</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-48);"><span class="swatch-inner-text" style="color:#fff;">48%</span></div></div>
                                 <div class="swatch-item"><span class="swatch-label">64</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-64);"><span class="swatch-inner-text" style="color:#fff;">64%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">72</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-72);"><span class="swatch-inner-text" style="color:#fff;">72%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">80</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-80);"><span class="swatch-inner-text" style="color:#000;">80%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">88</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-88);"><span class="swatch-inner-text" style="color:#000;">88%</span></div></div>
+                                <div class="swatch-item"><span class="swatch-label">96</span><div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-transparent-white-96);"><span class="swatch-inner-text" style="color:#000;">96%</span></div></div>
                             </div>
                         </div>
 
@@ -1471,7 +1505,7 @@
             { token: 'title-2',  desktop: '3.5rem (56px) / 900',   tablet: '3rem (48px) / 900',    mobile: '2rem (32px) / 900' },
             { token: 'title-3',  desktop: '3rem (48px) / 900',     tablet: '2rem (32px) / 900',    mobile: '1.5rem (24px) / 900' },
             { token: 'title-4',  desktop: '2.25rem (36px) / 900',  tablet: '1.5rem (24px) / 900',  mobile: '1.25rem (20px) / 900' },
-            { token: 'title-5',  desktop: '1.5rem (24px) / 900',   tablet: '1.25rem (20px) / 900', mobile: '1.25rem (20px) / 900' },
+            { token: 'title-5',  desktop: '1.5rem (24px) / 900',   tablet: '1.25rem (20px) / 900', mobile: '1.125rem (18px) / 900' },
             { token: 'title-6',  desktop: '1.125rem (18px) / 700', tablet: '1rem (16px) / 700',    mobile: '1rem (16px) / 700' },
             { token: 'body-lg',  desktop: '1.25rem (20px) / 400',  tablet: '1.125rem (18px) / 400',mobile: '1rem (16px) / 400' },
             { token: 'body-md',  desktop: '1rem (16px) / 400',     tablet: '1rem (16px) / 400',    mobile: '1rem (16px) / 400' },

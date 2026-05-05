@@ -298,19 +298,25 @@ p {
     border-bottom: none;
 }
 
+.type-spec {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 @media(max-width: 768px) {
     .type-row {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--s2a-spacing-md);
+        padding-inline: var(--s2a-spacing-sm);
     }
-}
 
-.type-spec {
-    flex: 0 0 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    .type-spec {
+        flex: none;
+        width: 100%;
+    }
 }
 
 .type-spec .token-name {

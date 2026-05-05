@@ -21,10 +21,10 @@ This page exists as a single source of truth for developers and designers to:
 | Field | Value |
 | --- | --- |
 | Package | `@adobecom/s2a-tokens` |
-| Verified version | `0.0.14` (tarball: `adobecom-s2a-tokens-0.0.14.tgz`) |
+| Verified version | `0.0.16` (tarball: `adobecom-s2a-tokens-0.0.16.tgz`) |
 | Repository | `github.com/adobecom/consonant` |
 | Registry | `npm.pkg.github.com` |
-| Last verified | 2026-04-28 |
+| Last verified | 2026-05-05 |
 
 The page sources tokens from a local `s2a-tokens.css` file — a consolidated hand-maintained mirror of the package's CSS output. When the package updates, this file should be re-synced against the new build artifacts and the Version History table updated.
 
@@ -40,9 +40,8 @@ style-page/
 ├── s2a-layout-grids.css  # S2A grid system (container, row, col-* classes)
 ├── package/              # Pinned package snapshot for reference
 │   ├── css/
-│   │   ├── dev/          # Per-file token source (primitives, semantic, typography…)
-│   │   ├── min/          # Minified combined output
-│   │   └── tokens.breakpoints.css
+│   │   ├── dev/          # Per-file token source (primitives, semantic, responsive…)
+│   │   └── min/          # Minified combined output
 │   ├── CHANGELOG.md
 │   └── package.json
 └── README.md
@@ -56,11 +55,10 @@ The `s2a-tokens.css` file includes a small set of local additions beyond the pub
 
 | Extension | Reason |
 | --- | --- |
-| `--s2a-font-letter-spacing-neg-1` (−1px) | Extra primitive not in 0.0.14 |
-| `--s2a-font-letter-spacing-3xl` → `neg-1` | Package maps to `neg-0_96`; local corrects to `neg-1` |
-| Full `--s2a-layout-*` scale (sm → 2xl) | Missing from 0.0.14 semantic output |
-| Full `--s2a-spacing-*` semantic scale | Retained locally |
-| `--s2a-router-card-*`, `--s2a-app-card-*`, `--s2a-product-lockup-*`, `--s2a-layout-rich-media-*` | Design-only in 0.0.14; retained for reference |
+| Full `--s2a-font-family-*` stacks | Package ships bare family names; local adds full stack fallbacks |
+| Full `--s2a-layout-*` scale (sm → 2xl) | Retained locally for reference |
+| Full `--s2a-spacing-*` semantic scale | Retained locally for reference |
+| `--s2a-router-card-*`, `--s2a-app-card-*`, `--s2a-product-lockup-*`, `--s2a-layout-rich-media-*` | Design-only; retained for reference |
 
 ---
 
@@ -115,9 +113,7 @@ Primitive  →  Semantic  →  Component
 
 **Semantic** tokens (`tokens.semantic.css`, `tokens.semantic.light.css`, `tokens.semantic.dark.css`) assign intent — `content-default`, `background-subtle`, `border-brand`. These split into light and dark sets.
 
-**Responsive** tokens (`tokens.typography.css`, `tokens.typography.desktop.css`, `tokens.typography.tablet.css`) apply breakpoint-specific overrides at `@media (min-width: 1024px)` and `@media (min-width: 1280px)`.
-
-**Component** tokens (`tokens.component.css`) are the most specific — they wire semantic values to individual UI components like buttons and icon buttons.
+**Responsive** tokens (`tokens.responsive.sm/md/lg/xl.css`) apply breakpoint-specific overrides for typography and spacing at four breakpoints: base/mobile (no query), tablet (`≥1024px`), desktop (`≥1280px`), and HD (`≥1441px`).
 
 ---
 
@@ -125,17 +121,17 @@ Primitive  →  Semantic  →  Component
 
 When a new package version is available:
 
-1. Extract the new tarball and locate `css/dev/` and `css/tokens.breakpoints.css`
+1. Extract the new tarball and locate `css/dev/`
 2. Re-sync `s2a-tokens.css` by merging the updated source files in this order:
-   - `tokens.primitives.css`
+   - `tokens.primitives.css` + `tokens.primitives.light.css`
    - `tokens.semantic.css` + `tokens.semantic.light.css` + `tokens.semantic.dark.css`
-   - `tokens.typography.css` (responsive base)
-   - `tokens.typography.tablet.css` (≥1024px overrides)
-   - `tokens.typography.desktop.css` (≥1280px overrides)
-   - `tokens.component.css` (button / icon-button tokens)
+   - `tokens.responsive.sm.css` (mobile base, no media query)
+   - `tokens.responsive.md.css` (≥1024px)
+   - `tokens.responsive.lg.css` (≥1280px)
+   - `tokens.responsive.xl.css` (≥1441px)
 3. Re-apply any local extensions noted in the [Local Extensions](#local-extensions) section
-4. Add a row to the Version History table in `index.html`
-5. Update the `Last verified` date in the `s2a-tokens.css` file header
+4. Update the Version History table in `index.html` to show only the new version
+5. Update the version, source tarball, and date in the `s2a-tokens.css` file header
 
 ---
 
