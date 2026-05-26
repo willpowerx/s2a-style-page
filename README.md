@@ -21,10 +21,10 @@ This page exists as a single source of truth for developers and designers to:
 | Field | Value |
 | --- | --- |
 | Package | `@adobecom/s2a-tokens` |
-| Verified version | `0.0.16` (tarball: `adobecom-s2a-tokens-0.0.16.tgz`) |
+| Verified version | `0.0.17` (tarball: `adobecom-s2a-tokens-0.0.17.tgz`) |
 | Repository | `github.com/adobecom/consonant` |
 | Registry | `npm.pkg.github.com` |
-| Last verified | 2026-05-05 |
+| Last verified | 2026-05-26 |
 
 The page sources tokens from a local `s2a-tokens.css` file — a consolidated hand-maintained mirror of the package's CSS output. When the package updates, this file should be re-synced against the new build artifacts and the Version History table updated.
 
@@ -146,7 +146,7 @@ All tokens use the `--s2a-` prefix.
 --s2a-color-content-default
 --s2a-spacing-lg
 --s2a-border-radius-md
---s2a-typography-font-size-title-1
+--s2a-typography-font-size-heading-1
 --s2a-blur-sm
 --s2a-shadow-level-2-blur
 ```
