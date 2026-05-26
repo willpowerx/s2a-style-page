@@ -349,26 +349,26 @@ p {
 }
 
 .text-h1 {
-    font-size: var(--s2a-typography-font-size-title-1);
-    line-height: var(--s2a-typography-line-height-title-1);
+    font-size: var(--s2a-typography-font-size-heading-1);
+    line-height: var(--s2a-typography-line-height-heading-1);
     font-weight: 700;
 }
 
 .text-h2 {
-    font-size: var(--s2a-typography-font-size-title-2);
-    line-height: var(--s2a-typography-line-height-title-2);
+    font-size: var(--s2a-typography-font-size-heading-2);
+    line-height: var(--s2a-typography-line-height-heading-2);
     font-weight: 700;
 }
 
 .text-h3 {
-    font-size: var(--s2a-typography-font-size-title-3);
-    line-height: var(--s2a-typography-line-height-title-3);
+    font-size: var(--s2a-typography-font-size-heading-3);
+    line-height: var(--s2a-typography-line-height-heading-3);
     font-weight: 700;
 }
 
 .text-h4 {
-    font-size: var(--s2a-typography-font-size-title-4);
-    line-height: var(--s2a-typography-line-height-title-4);
+    font-size: var(--s2a-typography-font-size-heading-4);
+    line-height: var(--s2a-typography-line-height-heading-4);
     font-weight: 700;
 }
 
@@ -986,12 +986,12 @@ p {
 /* Mobile (<1024px) */
 .text-styles--mobile {
     --s2a-typography-font-size-super: var(--s2a-font-size-7xl);
-    --s2a-typography-font-size-title-1: var(--s2a-font-size-5xl);
-    --s2a-typography-font-size-title-2: var(--s2a-font-size-3xl);
-    --s2a-typography-font-size-title-3: var(--s2a-font-size-2xl);
-    --s2a-typography-font-size-title-4: var(--s2a-font-size-xl);
-    --s2a-typography-font-size-title-5: var(--s2a-font-size-xl);
-    --s2a-typography-font-size-title-6: var(--s2a-font-size-md);
+    --s2a-typography-font-size-heading-1: var(--s2a-font-size-5xl);
+    --s2a-typography-font-size-heading-2: var(--s2a-font-size-3xl);
+    --s2a-typography-font-size-heading-3: var(--s2a-font-size-2xl);
+    --s2a-typography-font-size-heading-4: var(--s2a-font-size-xl);
+    --s2a-typography-font-size-heading-5: var(--s2a-font-size-xl);
+    --s2a-typography-font-size-heading-6: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-lg: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-md: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-sm: var(--s2a-font-size-sm);
@@ -1001,12 +1001,12 @@ p {
     --s2a-typography-font-size-caption: var(--s2a-font-size-xs);
 
     --s2a-typography-line-height-super:   var(--s2a-font-line-height-3xl);
-    --s2a-typography-line-height-title-1: var(--s2a-font-line-height-xl);
-    --s2a-typography-line-height-title-2: var(--s2a-font-line-height-lg);
-    --s2a-typography-line-height-title-3: var(--s2a-font-line-height-md);
-    --s2a-typography-line-height-title-4: var(--s2a-font-line-height-sm);
-    --s2a-typography-line-height-title-5: var(--s2a-font-line-height-sm);
-    --s2a-typography-line-height-title-6: var(--s2a-font-line-height-xs);
+    --s2a-typography-line-height-heading-1: var(--s2a-font-line-height-xl);
+    --s2a-typography-line-height-heading-2: var(--s2a-font-line-height-lg);
+    --s2a-typography-line-height-heading-3: var(--s2a-font-line-height-md);
+    --s2a-typography-line-height-heading-4: var(--s2a-font-line-height-sm);
+    --s2a-typography-line-height-heading-5: var(--s2a-font-line-height-sm);
+    --s2a-typography-line-height-heading-6: var(--s2a-font-line-height-xs);
     --s2a-typography-line-height-body-lg: var(--s2a-font-line-height-sm);
     --s2a-typography-line-height-body-md: var(--s2a-font-line-height-sm);
     --s2a-typography-line-height-body-sm: var(--s2a-font-line-height-xs);
@@ -1016,23 +1016,23 @@ p {
     --s2a-typography-line-height-caption: var(--s2a-font-line-height-2xs);
 
     --s2a-typography-letter-spacing-super:   var(--s2a-font-letter-spacing-lg);
-    --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-lg);
-    --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-4xl);
-    --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-6xl);
-    --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-1: var(--s2a-font-letter-spacing-lg);
+    --s2a-typography-letter-spacing-heading-2: var(--s2a-font-letter-spacing-4xl);
+    --s2a-typography-letter-spacing-heading-3: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-4: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-5: var(--s2a-font-letter-spacing-6xl);
+    --s2a-typography-letter-spacing-heading-6: var(--s2a-font-letter-spacing-5xl);
 }
 
 /* Tablet (1024–1279px) */
 .text-styles--tablet {
     --s2a-typography-font-size-super: var(--s2a-font-size-9xl);
-    --s2a-typography-font-size-title-1: var(--s2a-font-size-7xl);
-    --s2a-typography-font-size-title-2: var(--s2a-font-size-6xl);
-    --s2a-typography-font-size-title-3: var(--s2a-font-size-3xl);
-    --s2a-typography-font-size-title-4: var(--s2a-font-size-2xl);
-    --s2a-typography-font-size-title-5: var(--s2a-font-size-xl);
-    --s2a-typography-font-size-title-6: var(--s2a-font-size-md);
+    --s2a-typography-font-size-heading-1: var(--s2a-font-size-7xl);
+    --s2a-typography-font-size-heading-2: var(--s2a-font-size-6xl);
+    --s2a-typography-font-size-heading-3: var(--s2a-font-size-3xl);
+    --s2a-typography-font-size-heading-4: var(--s2a-font-size-2xl);
+    --s2a-typography-font-size-heading-5: var(--s2a-font-size-xl);
+    --s2a-typography-font-size-heading-6: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-lg: var(--s2a-font-size-lg);
     --s2a-typography-font-size-body-md: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-sm: var(--s2a-font-size-sm);
@@ -1042,12 +1042,12 @@ p {
     --s2a-typography-font-size-caption: var(--s2a-font-size-xs);
 
     --s2a-typography-line-height-super:   var(--s2a-font-line-height-4xl);
-    --s2a-typography-line-height-title-1: var(--s2a-font-line-height-3xl);
-    --s2a-typography-line-height-title-2: var(--s2a-font-line-height-2xl);
-    --s2a-typography-line-height-title-3: var(--s2a-font-line-height-lg);
-    --s2a-typography-line-height-title-4: var(--s2a-font-line-height-md);
-    --s2a-typography-line-height-title-5: var(--s2a-font-line-height-sm);
-    --s2a-typography-line-height-title-6: var(--s2a-font-line-height-xs);
+    --s2a-typography-line-height-heading-1: var(--s2a-font-line-height-3xl);
+    --s2a-typography-line-height-heading-2: var(--s2a-font-line-height-2xl);
+    --s2a-typography-line-height-heading-3: var(--s2a-font-line-height-lg);
+    --s2a-typography-line-height-heading-4: var(--s2a-font-line-height-md);
+    --s2a-typography-line-height-heading-5: var(--s2a-font-line-height-sm);
+    --s2a-typography-line-height-heading-6: var(--s2a-font-line-height-xs);
     --s2a-typography-line-height-body-lg: var(--s2a-font-line-height-md);
     --s2a-typography-line-height-body-md: var(--s2a-font-line-height-sm);
     --s2a-typography-line-height-body-sm: var(--s2a-font-line-height-xs);
@@ -1057,23 +1057,23 @@ p {
     --s2a-typography-line-height-caption: var(--s2a-font-line-height-2xs);
 
     --s2a-typography-letter-spacing-super:   var(--s2a-font-letter-spacing-md);
-    --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-sm);
-    --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-xl);
-    --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-5xl);
-    --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-1: var(--s2a-font-letter-spacing-sm);
+    --s2a-typography-letter-spacing-heading-2: var(--s2a-font-letter-spacing-xl);
+    --s2a-typography-letter-spacing-heading-3: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-4: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-5: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-6: var(--s2a-font-letter-spacing-5xl);
 }
 
 /* Desktop (≥1280px) */
 .text-styles--desktop {
     --s2a-typography-font-size-super: var(--s2a-font-size-11xl);
-    --s2a-typography-font-size-title-1: var(--s2a-font-size-10xl);
-    --s2a-typography-font-size-title-2: var(--s2a-font-size-7xl);
-    --s2a-typography-font-size-title-3: var(--s2a-font-size-6xl);
-    --s2a-typography-font-size-title-4: var(--s2a-font-size-4xl);
-    --s2a-typography-font-size-title-5: var(--s2a-font-size-2xl);
-    --s2a-typography-font-size-title-6: var(--s2a-font-size-lg);
+    --s2a-typography-font-size-heading-1: var(--s2a-font-size-10xl);
+    --s2a-typography-font-size-heading-2: var(--s2a-font-size-7xl);
+    --s2a-typography-font-size-heading-3: var(--s2a-font-size-6xl);
+    --s2a-typography-font-size-heading-4: var(--s2a-font-size-4xl);
+    --s2a-typography-font-size-heading-5: var(--s2a-font-size-2xl);
+    --s2a-typography-font-size-heading-6: var(--s2a-font-size-lg);
     --s2a-typography-font-size-body-lg: var(--s2a-font-size-xl);
     --s2a-typography-font-size-body-md: var(--s2a-font-size-md);
     --s2a-typography-font-size-body-sm: var(--s2a-font-size-sm);
@@ -1083,12 +1083,12 @@ p {
     --s2a-typography-font-size-caption: var(--s2a-font-size-xs);
 
     --s2a-typography-line-height-super:   var(--s2a-font-line-height-6xl);
-    --s2a-typography-line-height-title-1: var(--s2a-font-line-height-5xl);
-    --s2a-typography-line-height-title-2: var(--s2a-font-line-height-3xl);
-    --s2a-typography-line-height-title-3: var(--s2a-font-line-height-2xl);
-    --s2a-typography-line-height-title-4: var(--s2a-font-line-height-xl);
-    --s2a-typography-line-height-title-5: var(--s2a-font-line-height-md);
-    --s2a-typography-line-height-title-6: var(--s2a-font-line-height-xs);
+    --s2a-typography-line-height-heading-1: var(--s2a-font-line-height-5xl);
+    --s2a-typography-line-height-heading-2: var(--s2a-font-line-height-3xl);
+    --s2a-typography-line-height-heading-3: var(--s2a-font-line-height-2xl);
+    --s2a-typography-line-height-heading-4: var(--s2a-font-line-height-xl);
+    --s2a-typography-line-height-heading-5: var(--s2a-font-line-height-md);
+    --s2a-typography-line-height-heading-6: var(--s2a-font-line-height-xs);
     --s2a-typography-line-height-body-lg: var(--s2a-font-line-height-md);
     --s2a-typography-line-height-body-md: var(--s2a-font-line-height-sm);
     --s2a-typography-line-height-body-sm: var(--s2a-font-line-height-xs);
@@ -1098,12 +1098,12 @@ p {
     --s2a-typography-line-height-caption: var(--s2a-font-line-height-2xs);
 
     --s2a-typography-letter-spacing-super:   var(--s2a-font-letter-spacing-xs);
-    --s2a-typography-letter-spacing-title-1: var(--s2a-font-letter-spacing-sm);
-    --s2a-typography-letter-spacing-title-2: var(--s2a-font-letter-spacing-lg);
-    --s2a-typography-letter-spacing-title-3: var(--s2a-font-letter-spacing-xl);
-    --s2a-typography-letter-spacing-title-4: var(--s2a-font-letter-spacing-3xl);
-    --s2a-typography-letter-spacing-title-5: var(--s2a-font-letter-spacing-4xl);
-    --s2a-typography-letter-spacing-title-6: var(--s2a-font-letter-spacing-5xl);
+    --s2a-typography-letter-spacing-heading-1: var(--s2a-font-letter-spacing-sm);
+    --s2a-typography-letter-spacing-heading-2: var(--s2a-font-letter-spacing-lg);
+    --s2a-typography-letter-spacing-heading-3: var(--s2a-font-letter-spacing-xl);
+    --s2a-typography-letter-spacing-heading-4: var(--s2a-font-letter-spacing-3xl);
+    --s2a-typography-letter-spacing-heading-5: var(--s2a-font-letter-spacing-4xl);
+    --s2a-typography-letter-spacing-heading-6: var(--s2a-font-letter-spacing-5xl);
 }
 
 /* --- S2A Responsive Typography --- */
@@ -1135,51 +1135,51 @@ p {
     font-weight: 900;
 }
 
-.s2a-text-title-1 {
+.s2a-text-heading-1 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-1);
-    line-height: var(--s2a-typography-line-height-title-1);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-1);
+    font-size: var(--s2a-typography-font-size-heading-1);
+    line-height: var(--s2a-typography-line-height-heading-1);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-1);
     font-weight: 900;
 }
 
-.s2a-text-title-2 {
+.s2a-text-heading-2 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-2);
-    line-height: var(--s2a-typography-line-height-title-2);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-2);
+    font-size: var(--s2a-typography-font-size-heading-2);
+    line-height: var(--s2a-typography-line-height-heading-2);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-2);
     font-weight: 900;
 }
 
-.s2a-text-title-3 {
+.s2a-text-heading-3 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-3);
-    line-height: var(--s2a-typography-line-height-title-3);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-3);
+    font-size: var(--s2a-typography-font-size-heading-3);
+    line-height: var(--s2a-typography-line-height-heading-3);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-3);
     font-weight: 900;
 }
 
-.s2a-text-title-4 {
+.s2a-text-heading-4 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-4);
-    line-height: var(--s2a-typography-line-height-title-4);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-4);
+    font-size: var(--s2a-typography-font-size-heading-4);
+    line-height: var(--s2a-typography-line-height-heading-4);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-4);
     font-weight: 900;
 }
 
-.s2a-text-title-5 {
+.s2a-text-heading-5 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-5);
-    line-height: var(--s2a-typography-line-height-title-5);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-5);
+    font-size: var(--s2a-typography-font-size-heading-5);
+    line-height: var(--s2a-typography-line-height-heading-5);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-5);
     font-weight: 900;
 }
 
-.s2a-text-title-6 {
+.s2a-text-heading-6 {
     font-family: var(--s2a-font-family-heading);
-    font-size: var(--s2a-typography-font-size-title-6);
-    line-height: var(--s2a-typography-line-height-title-6);
-    letter-spacing: var(--s2a-typography-letter-spacing-title-6);
+    font-size: var(--s2a-typography-font-size-heading-6);
+    line-height: var(--s2a-typography-line-height-heading-6);
+    letter-spacing: var(--s2a-typography-letter-spacing-heading-6);
     font-weight: 700;
 }
 

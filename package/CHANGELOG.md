@@ -5,13 +5,293 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.16] - 2026-05-04
+
+### 🐛 Bug fixes
+
+- **`title-5` font-size at `sm` breakpoint corrected to 18px**
+  `--s2a-typography-font-size-title-5` at `sm` was resolving to 20px (same as `title-4`). Now aliases `--s2a-font-size-lg` (18px).
+
+- **`title-6` letter-spacing normalized to −0.2px across all breakpoints**
+  `--s2a-typography-letter-spacing-title-6` was −0.48px at `xl`, `lg`, `md`, and `sm`. Now aliases `--s2a-font-letter-spacing-5xl` (−0.2px) at all four breakpoints.
+
+- **`title-6` line-height corrected to 18px at `sm` breakpoint**
+  `--s2a-typography-line-height-title-6` at `sm` was 21px. Now aliases `--s2a-font-line-height-xs` (18px).
+
+### ✨ Changes
+
+- **Body, label, caption, and eyebrow letter-spacing normalized to 0**
+  `--s2a-typography-letter-spacing-body-lg`, `-body-md`, `-body-sm`, `-body-xs`, `-eyebrow`, `-label`, and `-caption` now alias `--s2a-font-letter-spacing-6xl` (0px) across all breakpoints. Previously these carried small negative tracking values.
+
+---
+
+## [0.0.15] - 2026-04-30
+
+### 🐛 Bug fix
+
+- **`title-5` letter-spacing corrected at `lg` and `xl` breakpoints**
+  `--s2a-typography-letter-spacing-title-5` was aliasing to `--s2a-font-letter-spacing-4xl` (-0.96px) at both `lg` and `xl`. The correct value matches `md` and is `--s2a-font-letter-spacing-5xl` (-0.48px). Updated in `tokens.responsive.lg.css`, `tokens.responsive.xl.css`, and `tokens.min.css`. The `xl` alias also referenced a deleted Figma variable (`deletedButReferenced: true`) — that stale reference has been cleaned up in `raw.json`.
+
+  | Breakpoint | Was | Now |
+  |---|---|---|
+  | `xl` | `var(--s2a-font-letter-spacing-4xl)` (-0.96px) | `var(--s2a-font-letter-spacing-5xl)` (-0.48px) |
+  | `lg` | `var(--s2a-font-letter-spacing-4xl)` (-0.96px) | `var(--s2a-font-letter-spacing-5xl)` (-0.48px) |
+  | `md` | `var(--s2a-font-letter-spacing-5xl)` (-0.48px) | *(unchanged)* |
+  | `sm` | `var(--s2a-font-letter-spacing-6xl)` (-0.2px) | *(unchanged)* |
+
+---
+
+## [0.0.14] - 2026-04-27
+
+### 💥 Breaking changes
+
+- **`lg` breakpoint typography scale updated (redesign team)**
+  All title and super roles in `tokens.responsive.lg.css` now reference larger font-size, adjusted letter-spacing, and taller line-height primitives. Consumers applying `lg` breakpoint overrides will see larger text:
+
+  | Role | Font size (was → now) | Line height (was → now) |
+  |---|---|---|
+  | `super` | `9xl` → `11xl` | `4xl` → `6xl` |
+  | `title-1` | `7xl` → `10xl` | `3xl` → `5xl` |
+  | `title-2` | `6xl` → `7xl` | `2xl` → `3xl` |
+  | `title-3` | `3xl` → `6xl` | `lg` → `2xl` |
+  | `title-4` | `2xl` → `4xl` | `md` → `xl` |
+  | `title-5` | `xl` → `2xl` | `sm` → `md` |
+  | `title-6` | `md` → `lg` | *(unchanged)* |
+  | `body-lg` | `lg` → `xl` | *(unchanged)* |
+
+  Letter-spacing also shifted for `super` (`md` → `xs`), `title-2` (`xl` → `lg`), `title-3` (`5xl` → `xl`), `title-4` (`5xl` → `3xl`), and `title-5` (`5xl` → `4xl`).
+
+  Visually re-check any layout using the `lg` breakpoint's title or super scale.
+
+- **`--s2a-font-line-height-sm-md` removed**
+  The intermediate 21px line-height semantic stop has been removed from `tokens.semantic.css`. Any direct usage of `var(--s2a-font-line-height-sm-md)` will now fall through to the browser default. Migrate to `--s2a-font-line-height-sm` (20px) or `--s2a-font-line-height-md` (24px) depending on context.
+
+- **Component layout tokens removed from all responsive files**
+  The following tokens have been removed from `tokens.responsive.sm/md/lg/xl.css` — their Figma variables are marked `DESIGN ONLY` and are not intended for CSS consumption. Define values locally in your component or open a request to promote them back to system tokens.
+
+  *Router Card (8 tokens):* `--s2a-router-card-width-resting`, `width-expanded`, `width-min`, `width-max`, `height-max`, `media-height`, `padding`, `gap`
+
+  *App Card (7 tokens):* `--s2a-app-card-max-height`, `min-height`, `padding`, `padding-horizontal`, `padding-vertical`, `gap`, `border-radius`
+
+  *Product Lockup (4 tokens):* `--s2a-product-lockup-gap-block`, `gap-block-start`, `gap-inline`, `gap-inline-start`
+
+### 🧹 Build & filtering
+
+- **Legacy token leak fixed**
+  Four unprefixed aliases (`--border-radius-md`, `--border-width-lg`, `--spacing-lg`, `--spacing-none`) were incorrectly appearing in `tokens.semantic.css` under a `/* Other */` block. Root cause: a legacy Figma variable collection without the `s2a.` prefix was passing through the semantic filter. Build now rejects all non-`s2a.*` paths in a single rule.
+
+- **Broken package exports removed**
+  `tokens.typography.css`, `tokens.typography.desktop.css`, and `tokens.breakpoints.css` were declared in the `exports` field but never generated (their Figma source collections are empty). These entries have been removed to prevent silent import failures.
+
+- **Figma sync refreshed across 15 JSON files**
+  Latest pull includes updated responsive container grid, semantic color theme additions, and static variable values.
+
+---
+
+## [0.0.13] - 2026-04-22
+
+### 💥 Breaking changes
+
+- **Letter-spacing semantic ramp restructured**
+  - Three new stops inserted; existing stops `3xl`–`8xl` renumbered to `4xl`–`11xl`. Any downstream CSS hardcoding the old semantic names will resolve to different values:
+
+  | Old name | New name | Value |
+  |---|---|---|
+  | *(new)* | `--s2a-font-letter-spacing-3xl` | `-1px` |
+  | `--s2a-font-letter-spacing-3xl` | `--s2a-font-letter-spacing-4xl` | `-0.96px` |
+  | `--s2a-font-letter-spacing-4xl` | `--s2a-font-letter-spacing-5xl` | `-0.48px` |
+  | `--s2a-font-letter-spacing-5xl` | `--s2a-font-letter-spacing-6xl` | `-0.2px` |
+  | `--s2a-font-letter-spacing-6xl` | `--s2a-font-letter-spacing-7xl` | `0` |
+  | `--s2a-font-letter-spacing-7xl` | `--s2a-font-letter-spacing-10xl` | `+0.16px` |
+  | `--s2a-font-letter-spacing-8xl` | `--s2a-font-letter-spacing-11xl` | `+0.24px` |
+  | *(new)* | `--s2a-font-letter-spacing-8xl` | `+0.12px` |
+  | *(new)* | `--s2a-font-letter-spacing-9xl` | `+0.14px` |
+
+  Stops `xs`–`2xl` are unchanged.
+
+- **External collections excluded by default**
+  - The sync step now drops every `c1/*`, `annotation`, and `s2c/*` collection before generating JSON. Palette-only primitives such as `--s2a-color-content-subdued-default` and annotation visibility tokens are **removed** from the package. If you depended on these non-system tokens, migrate to the sanctioned S2A semantics (e.g., `--s2a-color-content-default`).
+
+- **All CSS output now requires `--s2a-` prefix**
+  - Legacy unprefixed duplicates (`--border-radius-*`, `--spacing-*`, `--color-transparent-*`, `--font-family-*`, `--shadow-level-*`) have been removed from all output files. Only `--s2a-*` custom properties are emitted. Shadow color references now correctly point to `--s2a-color-transparent-black-*`.
+
+### ✨ Improvements
+
+- **New line-height stop: `sm-md`**
+  - `--s2a-font-line-height-sm-md: 21px` added between `sm` (20px) and `md` (24px).
+
+- **RouterCard layout tokens shipped**
+  - The following system tokens now appear in each responsive CSS file:
+    - `--s2a-router-card-width-resting`
+    - `--s2a-router-card-width-expanded`
+    - `--s2a-router-card-width-min`
+    - `--s2a-router-card-width-max`
+    - `--s2a-router-card-height-max`
+    - `--s2a-router-card-media-height`
+    - `--s2a-router-card-padding`
+    - `--s2a-router-card-gap`
+
+- **Responsive output mirrors the collection exactly**
+  - `tokens.responsive.{sm,md,lg,xl}.css` now emit only the tokens defined in the Responsive collection. All references stay as `var(--s2a-…)`.
+
+### 🧹 Build & filtering
+
+- **Prefix enforcement in all CSS output**
+  - Primitives, light/dark color, and semantic filters now exclusively emit `path[0] === "s2a"` tokens. Legacy bare-path duplicates from non-S2A Figma collections are silently dropped.
+
+- **Shadow color references fixed**
+  - Shadow `$value` references are rewritten from `{color.transparent.*}` to `{s2a.color.transparent.*}` before Style Dictionary runs, so `--s2a-shadow-level-*-color` variables correctly resolve to `--s2a-color-transparent-black-*`.
+
+- **Source tagging inside Style Dictionary**
+  - Tokens from the Responsive collection are tagged before merging with base primitives so the CSS filter can include only those tagged nodes.
+
+---
+
+## [0.0.12] - 2026-03-18
+
+### 💥 Breaking changes
+
+- **Removed XS responsive file**
+  - `css/dev/tokens.responsive.xs.css` is no longer shipped in `0.0.12`.
+  - If consumers import `@import "…/tokens.responsive.xs.css";` directly, those imports must be removed or updated.
+
+- **Grid + section layout tokens removed**
+  - The following CSS custom properties existed in `0.0.11` and are **gone** in `0.0.12` (they are not re‑emitted under new names):
+    - **Grid/container/spacing**
+      - `--s2a-grid-gutter`
+      - `--s2a-grid-element-gap-sm`
+      - `--s2a-grid-element-gap-lg`
+      - `--s2a-grid-breakpoint-min-width`
+      - `--s2a-grid-breakpoint-max-width`
+      - `--s2a-grid-container-max-width`
+      - `--s2a-grid-container-body-max-width`
+      - `--s2a-grid-container-content-max-width`
+      - `--s2a-grid-container-padding-inline`
+      - `--s2a-grid-container-width-percent`
+    - **Section padding**
+      - `--s2a-section-padding-xs`
+      - `--s2a-section-padding-sm`
+      - `--s2a-section-padding-md`
+      - `--s2a-section-padding-lg`
+      - `--s2a-section-padding-xl`
+      - `--s2a-section-padding-none`
+  - In `0.0.11` these were emitted from `tokens.responsive.{xs,sm,md,lg,xl}.css`. They are no longer present in any layer in `0.0.12`, so any direct usages must be migrated.
+
+- **Line-height primitives reverted from relative to px**
+  - `--s2a-font-line-height-*` primitives changed from unitless ratios back to absolute pixel values:
+    - Example: `--s2a-font-line-height-16` was `1.333` → now `16px`.
+    - Example: `--s2a-font-line-height-69` was `1.232` → now `69px`.
+  - All semantic/responsive line-height aliases (e.g., `--s2a-typography-line-height-body-md`) still point at these primitives, so any `line-height: var(--s2a-…);` usage now resolves to a fixed px length instead of a scaling ratio.
+  - Teams should visually re‑check vertical rhythm where they relied on the old unitless behavior.
+
+### ✨ Improvements
+
+- **Viewport vertical padding tokens**
+  - Introduced new viewport‑scoped section padding tokens:
+    - `--s2a-viewport-vertical-padding-2xs`
+    - `--s2a-viewport-vertical-padding-xs`
+    - `--s2a-viewport-vertical-padding-sm`
+    - `--s2a-viewport-vertical-padding-md`
+    - `--s2a-viewport-vertical-padding-lg`
+    - `--s2a-viewport-vertical-padding-xl`
+    - `--s2a-viewport-vertical-padding-none`
+  - Recommended migration mapping from the removed section padding family:
+    - `--s2a-section-padding-xs` → `--s2a-viewport-vertical-padding-xs`
+    - `--s2a-section-padding-sm` → `--s2a-viewport-vertical-padding-sm`
+    - `--s2a-section-padding-md` → `--s2a-viewport-vertical-padding-md`
+    - `--s2a-section-padding-lg` → `--s2a-viewport-vertical-padding-lg`
+    - `--s2a-section-padding-xl` → `--s2a-viewport-vertical-padding-xl`
+    - `--s2a-section-padding-none` → `--s2a-viewport-vertical-padding-none`
+
+- **Additional primitives + semantics**
+  - Blur primitives:
+    - Added `--s2a-blur-24` and `--s2a-blur-128` to extend the blur scale.
+  - Transparent color ramps:
+    - Added higher‑alpha steps for both black and white:
+      - `--s2a-color-transparent-black-72`
+      - `--s2a-color-transparent-black-80`
+      - `--s2a-color-transparent-black-88`
+      - `--s2a-color-transparent-black-96`
+      - `--s2a-color-transparent-white-72`
+      - `--s2a-color-transparent-white-80`
+      - `--s2a-color-transparent-white-88`
+      - `--s2a-color-transparent-white-96`
+  - Semantic content color:
+    - Added `--s2a-color-content-strong` for stronger text emphasis separate from the default content color.
+
+### 🧹 Build & filtering
+
+- **Responsive CSS surface tightened**
+  - Updated the responsive build filters to:
+    - Exclude semantic layout tokens (`--s2a-layout-*`) from `tokens.responsive.{sm,md,lg,xl}.css` (they continue to live in the semantic layer).
+    - Include only responsive `s2a.viewport.*`, `s2a.layout-guide.*`, `s2a.typography.*`, and container tokens needed at breakpoints.
+  - Reinforced filtering of Figma tokens whose description contains `"DESIGN ONLY"` so they do not appear in the published CSS output.
+
+---
+
+## [0.0.11] - 2026-02-25
+
+### ✨ Improvements
+
+- **Typo fix**: Corrected "sublte" → "subtle" in token names/values.
+- **Section padding tokens**: Included `s2a.section.*` in the responsive build filter so section padding tokens (`--s2a-section-padding-none` through `--s2a-section-padding-xl`) from the S2A / Responsive / Grid / Typography collection now appear in `tokens.responsive.{sm,md,lg,xl}.css`.
+- **Redundant break removed**: Removed the redundant break (token/breakpoint) from the set.
+
+### 🧹 Build
+
+- **DESIGN ONLY tokens excluded**: Tokens whose Figma description contains "DESIGN ONLY" are now stripped from the token tree before CSS generation, so they no longer appear in any generated CSS custom properties (e.g. `--s2a-grid-container-_padding-inline` removed from responsive files).
+
+---
+
+## [0.0.10] - 2026-03-04
+
+### ✨ Improvements
+
+- **Responsive typography tokens**: Finalized responsive `typography.*` tokens for `xs / sm / md / lg / xl` breakpoints, ensuring each role (super, titles, body, eyebrow, label, caption) keeps its `font-size`, `letter-spacing`, and `line-height` trio in sync.
+- **Line-height mapping fix**: Corrected the mapping for the `76px` line-height primitive so it now produces a sane unitless ratio (`--s2a-font-line-height-76: 1.188`) instead of `4.75`.
+- **Letter-spacing units**: Reverted letter-spacing primitives back to px values that exactly match Figma dev mode, avoiding over-tight text caused by incorrect em conversion.
+
+### 🧼 Token surface cleanup
+
+- **Filter button/iconbutton semantics**: Temporarily removed all semantic `button` and `iconbutton` color tokens from `tokens.semantic.light.css` / `tokens.semantic.dark.css` until the component APIs are finalized.
+- **Blur primitives only in primitives**: Ensured `s2a.blur.*` tokens only appear in `tokens.primitives.css` and are not duplicated in semantic output.
+
+### 🧱 Build & packaging
+
+- **Responsive CSS in package**: Included `tokens.responsive.{xs,sm,md,lg,xl}.css` in the published package and Storybook so consumers can inspect breakpoint-specific grids and typography.
+- **New tarball**: Published `@adobecom/s2a-tokens@0.0.10` and added `releases/adobecom-s2a-tokens-0.0.10.tgz` for handoff.
+
+---
+
+## [0.0.9] - 2026-03-03
+
+### ✨ Improvements
+
+- **Figma sync refresh**: Pulled the latest primitives, semantic, and responsive collections from Figma (including the new *S2A / Responsive / Grid / Typography* collection).
+- **Deterministic build**: Simplified the Style Dictionary pipeline so a clean `json/` + `dist/` followed by `sync-figma` and `build` will always regenerate the same CSS for a given Figma state.
+- **Semantic vs primitives**: Tightened filters so semantic CSS no longer re-emits primitive values (spacing, radii, opacity, typography) or raw color ramps.
+
+### 📐 Naming & structure
+
+- **s2a-prefixed paths only once**: Fixed the custom name transform so tokens derived from `s2a.*` paths no longer get a duplicate `s2a-` prefix in their CSS variable names.
+- **Reference rewrites for dimensions**: Normalized semantic dimension references like `{spacing.96}` / `{border.radius.2}` to `{s2a.spacing.96}` / `{s2a.border.radius.2}` so they resolve correctly during the build.
+
+### 🧱 New output
+
+- **Responsive tokens (beta)**: Introduced the first pass of responsive CSS files:
+  - `tokens.responsive.xs.css`, `tokens.responsive.sm.css`, `tokens.responsive.md.css`, `tokens.responsive.lg.css`, `tokens.responsive.xl.css`
+  - Each file wires `--s2a-typography-*` roles to the appropriate primitive font-size/line-height/letter-spacing tokens for its breakpoint.
+- **Package tarball**: Published `@adobecom/s2a-tokens@0.0.9` and captured `releases/adobecom-s2a-tokens-0.0.9.tgz` as a distributable artifact.
+
+---
+
 ## [0.0.8] - 2025-02-26
 
 ### ✨ Improvements
 
-- **JIRA 2 — Quote font-family values**: Font family token values are now always output with quotes (e.g. `"Adobe Clean"`) to prevent multi-word families being parsed as separate CSS identifiers.
-- **JIRA 3 — Numeric font-weight values**: Restored numeric font-weight output (100–900) instead of names. Added `font.family.*` and `font.weight.*` path support for primitive typography tokens.
-- **JIRA 4 — De-duplicate Black weights**: Flattened duplicate font-weight tokens where multiple families map to the same value (e.g. `adobe-clean.black` and `adobe-clean-display.black` both 900). Display black now references the canonical token.
+- **Quote font-family values**: Font family token values are now always output with quotes (e.g. `"Adobe Clean"`) to prevent multi-word families being parsed as separate CSS identifiers.
+- **Numeric font-weight values**: Restored numeric font-weight output (100–900) instead of names. Added `font.family.*` and `font.weight.*` path support for primitive typography tokens.
+- **De-duplicate Black weights**: Flattened duplicate font-weight tokens where multiple families map to the same value (e.g. `adobe-clean.black` and `adobe-clean-display.black` both 900). Display black now references the canonical token.
 
 ---
 

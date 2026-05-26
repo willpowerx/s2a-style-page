@@ -174,6 +174,26 @@ For production, simply import the single consolidated minified file which includ
 
 ---
 
+# Quick Access (No Install)
+
+The token CSS is committed to the repo. Use it directly without installing:
+
+**jsDelivr CDN (recommended):**
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/adobecom/consonant@main/dist/packages/tokens/css/min/tokens.min.css">
+```
+
+**Raw GitHub (replace `main` with branch/tag as needed):**
+
+```html
+<link rel="stylesheet" href="https://raw.githubusercontent.com/adobecom/consonant/main/dist/packages/tokens/css/min/tokens.min.css">
+```
+
+For dev with individual files, use `css/dev/` instead of `css/min/tokens.min.css`.
+
+---
+
 # TL;DR for Engineers
 
 1. **For production, use the consolidated minified file (recommended):**

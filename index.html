@@ -53,7 +53,7 @@
                 <!-- Header Marquee (Hero) -->
                 <header class="marquee">
                     <h1 class="headline">S2A Design Tokens</h1>
-                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.16</p>
+                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.17</p>
                 </header>
 
                 <!-- ─────────────────────────────────────────────
@@ -74,6 +74,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td class="version-col">0.0.17</td>
+                                <td>2026-05-06</td>
+                                <td><code>adobecom-s2a-tokens-0.0.17.tgz</code></td>
+                                <td>
+                                    <span class="change-tag">title-* → heading-* rename across all typography tokens (font-size, letter-spacing, line-height — all breakpoints)</span>
+                                    <span class="change-tag">--s2a-color-content-title → --s2a-color-content-heading</span>
+                                    <span class="change-tag">--s2a-font-weight-title → --s2a-font-weight-heading</span>
+                                    <span class="change-tag">--s2a-font-family-title removed (no heading equivalent — family inherited from global font stack)</span>
+                                    <span class="change-tag">dark mode border tokens recalibrated: default gray.300, strong gray.25, knockout gray.25, inverse gray.1000</span>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="version-col">0.0.16</td>
                                 <td>2026-05-05</td>
@@ -207,8 +219,8 @@
                             <div class="semantic-swatches">
                                 <div class="swatch-item">
                                     <span class="swatch-label">default</span>
-                                    <div class="swatch-box" style="background: var(--s2a-color-border-default); color: #fff;">
-                                        <span class="swatch-inner-text">gray.800</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-default); color: var(--s2a-color-content-default);">
+                                        <span class="swatch-inner-text">gray.800 / gray.300</span>
                                     </div>
                                 </div>
                                 <div class="swatch-item">
@@ -219,14 +231,14 @@
                                 </div>
                                 <div class="swatch-item">
                                     <span class="swatch-label">strong</span>
-                                    <div class="swatch-box" style="background: var(--s2a-color-border-strong); color: #fff;">
-                                        <span class="swatch-inner-text">gray.900</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-strong); color: var(--s2a-color-content-knockout);">
+                                        <span class="swatch-inner-text">gray.900 / gray.25</span>
                                     </div>
                                 </div>
                                 <div class="swatch-item">
                                     <span class="swatch-label">knockout</span>
-                                    <div class="swatch-box swatch-on-dark" style="background: var(--s2a-color-border-knockout);">
-                                        <span class="swatch-inner-text" style="color:#000;">gray.1000</span>
+                                    <div class="swatch-box" style="background: var(--s2a-color-border-knockout); color: var(--s2a-color-content-knockout);">
+                                        <span class="swatch-inner-text">gray.1000 / gray.25</span>
                                     </div>
                                 </div>
                                 <div class="swatch-item">
@@ -538,45 +550,45 @@
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-1</span>
+                                <span class="token-name">heading-1</span>
                                 <span class="token-value">5rem (80px) / 900</span>
                             </div>
-                            <div class="type-preview s2a-text-title-1" style="overflow:hidden;">Aa Title 1</div>
+                            <div class="type-preview s2a-text-heading-1" style="overflow:hidden;">Aa Heading 1</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-2</span>
+                                <span class="token-name">heading-2</span>
                                 <span class="token-value">3.5rem (56px) / 900</span>
                             </div>
-                            <div class="type-preview s2a-text-title-2">Aa Title 2</div>
+                            <div class="type-preview s2a-text-heading-2">Aa Heading 2</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-3</span>
+                                <span class="token-name">heading-3</span>
                                 <span class="token-value">3rem (48px) / 900</span>
                             </div>
-                            <div class="type-preview s2a-text-title-3">Aa Title 3</div>
+                            <div class="type-preview s2a-text-heading-3">Aa Heading 3</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-4</span>
+                                <span class="token-name">heading-4</span>
                                 <span class="token-value">2.25rem (36px) / 900</span>
                             </div>
-                            <div class="type-preview s2a-text-title-4">Aa Title 4</div>
+                            <div class="type-preview s2a-text-heading-4">Aa Heading 4</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-5</span>
+                                <span class="token-name">heading-5</span>
                                 <span class="token-value">1.5rem (24px) / 900</span>
                             </div>
-                            <div class="type-preview s2a-text-title-5">Aa Title 5</div>
+                            <div class="type-preview s2a-text-heading-5">Aa Heading 5</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
-                                <span class="token-name">title-6</span>
+                                <span class="token-name">heading-6</span>
                                 <span class="token-value">1.125rem (18px) / 700</span>
                             </div>
-                            <div class="type-preview s2a-text-title-6">Aa Title 6</div>
+                            <div class="type-preview s2a-text-heading-6">Aa Heading 6</div>
                         </div>
                         <div class="type-row">
                             <div class="type-spec">
@@ -1501,12 +1513,12 @@
         // ── Typography Responsive Slider ─────────────────────
         const typeData = [
             { token: 'super',    desktop: '6rem (96px) / 900',     tablet: '4.5rem (72px) / 900',  mobile: '3.5rem (56px) / 900' },
-            { token: 'title-1',  desktop: '5rem (80px) / 900',     tablet: '3.5rem (56px) / 900',  mobile: '2.5rem (40px) / 900' },
-            { token: 'title-2',  desktop: '3.5rem (56px) / 900',   tablet: '3rem (48px) / 900',    mobile: '2rem (32px) / 900' },
-            { token: 'title-3',  desktop: '3rem (48px) / 900',     tablet: '2rem (32px) / 900',    mobile: '1.5rem (24px) / 900' },
-            { token: 'title-4',  desktop: '2.25rem (36px) / 900',  tablet: '1.5rem (24px) / 900',  mobile: '1.25rem (20px) / 900' },
-            { token: 'title-5',  desktop: '1.5rem (24px) / 900',   tablet: '1.25rem (20px) / 900', mobile: '1.125rem (18px) / 900' },
-            { token: 'title-6',  desktop: '1.125rem (18px) / 700', tablet: '1rem (16px) / 700',    mobile: '1rem (16px) / 700' },
+            { token: 'heading-1',  desktop: '5rem (80px) / 900',     tablet: '3.5rem (56px) / 900',  mobile: '2.5rem (40px) / 900' },
+            { token: 'heading-2',  desktop: '3.5rem (56px) / 900',   tablet: '3rem (48px) / 900',    mobile: '2rem (32px) / 900' },
+            { token: 'heading-3',  desktop: '3rem (48px) / 900',     tablet: '2rem (32px) / 900',    mobile: '1.5rem (24px) / 900' },
+            { token: 'heading-4',  desktop: '2.25rem (36px) / 900',  tablet: '1.5rem (24px) / 900',  mobile: '1.25rem (20px) / 900' },
+            { token: 'heading-5',  desktop: '1.5rem (24px) / 900',   tablet: '1.25rem (20px) / 900', mobile: '1.125rem (18px) / 900' },
+            { token: 'heading-6',  desktop: '1.125rem (18px) / 700', tablet: '1rem (16px) / 700',    mobile: '1rem (16px) / 700' },
             { token: 'body-lg',  desktop: '1.25rem (20px) / 400',  tablet: '1.125rem (18px) / 400',mobile: '1rem (16px) / 400' },
             { token: 'body-md',  desktop: '1rem (16px) / 400',     tablet: '1rem (16px) / 400',    mobile: '1rem (16px) / 400' },
             { token: 'body-sm',  desktop: '0.875rem (14px) / 400', tablet: '0.875rem (14px) / 400',mobile: '0.875rem (14px) / 400' },
