@@ -53,7 +53,7 @@
                 <!-- Header Marquee (Hero) -->
                 <header class="marquee">
                     <h1 class="headline">S2A Design Tokens</h1>
-                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.17</p>
+                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.19</p>
                 </header>
 
                 <!-- ─────────────────────────────────────────────
@@ -74,6 +74,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td class="version-col">0.0.19</td>
+                                <td>2026-08-05</td>
+                                <td><code>adobecom-s2a-tokens-0.0.19.tgz</code></td>
+                                <td>
+                                    <span class="change-tag">--s2a-border-radius-22 primitive added (22px)</span>
+                                    <span class="change-tag">border-radius t-shirt scale refactored to 9 steps: 3xs (new, 2px), 2xs 2→4px, xs 4→8px, sm 8→12px, md unchanged 16px, lg 32→22px, xl (new, 32px)</span>
+                                    <span class="change-tag">breaking: old lg (32px) consumers must move to xl; sub-md rungs render larger (MWPW-203041)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="version-col">0.0.18</td>
+                                <td>2026-08-03</td>
+                                <td><code>adobecom-s2a-tokens-0.0.18.tgz</code></td>
+                                <td>
+                                    <span class="change-tag">--s2a-spacing-128 primitive added (128px)</span>
+                                    <span class="change-tag">--s2a-layout-lg remapped 124px → 128px (var(--s2a-spacing-124) → var(--s2a-spacing-128))</span>
+                                    <span class="change-tag">--s2a-spacing-124 deprecated but retained for Milo backward-compat (MWPW-202891)</span>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="version-col">0.0.17</td>
                                 <td>2026-05-06</td>
@@ -967,9 +987,16 @@
                         <div class="space-item">
                             <div class="space-info">
                                 <code class="token-name-secondary">--s2a-spacing-124</code>
-                                <span class="token-value">124px</span>
+                                <span class="token-value" style="color: var(--s2a-color-content-subtle);">124px — deprecated, use spacing-128</span>
                             </div>
-                            <div class="space-block" style="width:124px; background:rgba(224,24,170,0.2); border:1px solid rgba(224,24,170,0.5); border-radius:4px; height:32px;"></div>
+                            <div class="space-block" style="width:124px; background:rgba(224,24,170,0.08); border:1px dashed rgba(224,24,170,0.4); border-radius:4px; height:32px;"></div>
+                        </div>
+                        <div class="space-item">
+                            <div class="space-info">
+                                <code class="token-name-secondary">--s2a-spacing-128</code>
+                                <span class="token-value">128px</span>
+                            </div>
+                            <div class="space-block" style="width:128px; background:rgba(224,24,170,0.2); border:1px solid rgba(224,24,170,0.5); border-radius:4px; height:32px;"></div>
                         </div>
                         <div class="space-item">
                             <div class="space-info">
@@ -1021,8 +1048,8 @@
                             <div class="layout-demo-container"><div class="layout-box l-lg"></div></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-layout-lg</span>
-                                <span class="token-value">124px</span>
-                                <span class="token-resolves-small">→ var(--s2a-spacing-124)</span>
+                                <span class="token-value">128px</span>
+                                <span class="token-resolves-small">→ var(--s2a-spacing-128)</span>
                             </div>
                         </div>
                         <div class="layout-card-small">
@@ -1067,7 +1094,7 @@
                             <div class="padding-scale-row"><span class="padding-scale-name">-xs</span><span class="padding-scale-value">40px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-sm</span><span class="padding-scale-value">64px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">80px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">124px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">128px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">160px</span></div>
                         </div>
                         <div class="padding-reference-card">
@@ -1076,7 +1103,7 @@
                             <div class="padding-scale-row"><span class="padding-scale-name">-2xs</span><span class="padding-scale-value">32px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-xs</span><span class="padding-scale-value">64px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-sm</span><span class="padding-scale-value">80px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">124px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">128px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">160px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">240px</span></div>
                         </div>
@@ -1104,27 +1131,35 @@
                             </div>
                         </div>
                         <div class="radius-card-small">
+                            <div class="s2a-radius-demo s2a-r-3xs"></div>
+                            <div class="token-details">
+                                <span class="token-name">--s2a-border-radius-3xs</span>
+                                <span class="token-value">2px</span>
+                                <span class="token-resolves-small">→ var(--s2a-border-radius-2)</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
                             <div class="s2a-radius-demo s2a-r-2xs"></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-border-radius-2xs</span>
-                                <span class="token-value">2px</span>
-                                <span class="token-resolves-small">→ var(--s2a-border-radius-2)</span>
+                                <span class="token-value">4px</span>
+                                <span class="token-resolves-small">→ var(--s2a-border-radius-4)</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
                             <div class="s2a-radius-demo s2a-r-xs"></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-border-radius-xs</span>
-                                <span class="token-value">4px</span>
-                                <span class="token-resolves-small">→ var(--s2a-border-radius-4)</span>
+                                <span class="token-value">8px</span>
+                                <span class="token-resolves-small">→ var(--s2a-border-radius-8)</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
                             <div class="s2a-radius-demo s2a-r-sm"></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-border-radius-sm</span>
-                                <span class="token-value">8px</span>
-                                <span class="token-resolves-small">→ var(--s2a-border-radius-8)</span>
+                                <span class="token-value">12px</span>
+                                <span class="token-resolves-small">→ var(--s2a-border-radius-12)</span>
                             </div>
                         </div>
                         <div class="radius-card-small">
@@ -1139,6 +1174,14 @@
                             <div class="s2a-radius-demo s2a-r-lg"></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-border-radius-lg</span>
+                                <span class="token-value">22px</span>
+                                <span class="token-resolves-small">→ var(--s2a-border-radius-22)</span>
+                            </div>
+                        </div>
+                        <div class="radius-card-small">
+                            <div class="s2a-radius-demo s2a-r-xl"></div>
+                            <div class="token-details">
+                                <span class="token-name">--s2a-border-radius-xl</span>
                                 <span class="token-value">32px</span>
                                 <span class="token-resolves-small">→ var(--s2a-border-radius-32)</span>
                             </div>
@@ -1162,6 +1205,7 @@
                         <div class="border-primitive-row"><code>--s2a-border-radius-8</code><span>8px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-12</code><span>12px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-16</code><span>16px</span></div>
+                        <div class="border-primitive-row"><code>--s2a-border-radius-22</code><span>22px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-24</code><span>24px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-32</code><span>32px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-999</code><span>999px (pill)</span></div>
