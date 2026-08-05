@@ -889,7 +889,7 @@ p {
 }
 
 .layout-box.l-lg {
-    width: 124px;
+    width: 128px;
 }
 
 .layout-box.l-xl {
@@ -963,11 +963,13 @@ p {
 }
 
 .s2a-radius-demo.s2a-r-none { border-radius: var(--s2a-border-radius-none); }
+.s2a-radius-demo.s2a-r-3xs { border-radius: var(--s2a-border-radius-3xs); }
 .s2a-radius-demo.s2a-r-2xs { border-radius: var(--s2a-border-radius-2xs); }
 .s2a-radius-demo.s2a-r-xs { border-radius: var(--s2a-border-radius-xs); }
 .s2a-radius-demo.s2a-r-sm { border-radius: var(--s2a-border-radius-sm); }
 .s2a-radius-demo.s2a-r-md { border-radius: var(--s2a-border-radius-md); }
 .s2a-radius-demo.s2a-r-lg { border-radius: var(--s2a-border-radius-lg); }
+.s2a-radius-demo.s2a-r-xl { border-radius: var(--s2a-border-radius-xl); }
 .s2a-radius-demo.s2a-r-round { border-radius: var(--s2a-border-radius-round); }
 
 /* --- Shadow XL --- */

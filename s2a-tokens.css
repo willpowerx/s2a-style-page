@@ -1,7 +1,7 @@
 /* =========================================
-   s2a Design Tokens — v0.0.17
-   Source: adobecom-s2a-tokens-0.0.17.tgz
-   Last verified: 2026-05-26
+   s2a Design Tokens — v0.0.19
+   Source: adobecom-s2a-tokens-0.0.19.tgz
+   Last verified: 2026-08-05
 
    Local extensions beyond the package:
      - Full font-family stacks (package ships single font name only)
@@ -165,6 +165,7 @@
     --s2a-border-radius-8: 8px;
     --s2a-border-radius-12: 12px;
     --s2a-border-radius-16: 16px;
+    --s2a-border-radius-22: 22px;
     --s2a-border-radius-24: 24px;
     --s2a-border-radius-32: 32px;
     --s2a-border-radius-999: 999px;
@@ -222,7 +223,8 @@
     --s2a-spacing-64: 64px;
     --s2a-spacing-80: 80px;
     --s2a-spacing-96: 96px;
-    --s2a-spacing-124: 124px;
+    --s2a-spacing-124: 124px; /* DEPRECATED — use spacing-128 instead. Retained for Milo backward-compat (MWPW-202891) */
+    --s2a-spacing-128: 128px;
     --s2a-spacing-160: 160px;
     --s2a-spacing-240: 240px;
 
@@ -300,11 +302,13 @@
 
     /* Border Radius */
     --s2a-border-radius-none: var(--s2a-border-radius-0);
-    --s2a-border-radius-2xs: var(--s2a-border-radius-2);
-    --s2a-border-radius-xs: var(--s2a-border-radius-4);
-    --s2a-border-radius-sm: var(--s2a-border-radius-8);
+    --s2a-border-radius-3xs: var(--s2a-border-radius-2);
+    --s2a-border-radius-2xs: var(--s2a-border-radius-4);
+    --s2a-border-radius-xs: var(--s2a-border-radius-8);
+    --s2a-border-radius-sm: var(--s2a-border-radius-12);
     --s2a-border-radius-md: var(--s2a-border-radius-16);
-    --s2a-border-radius-lg: var(--s2a-border-radius-32);
+    --s2a-border-radius-lg: var(--s2a-border-radius-22);
+    --s2a-border-radius-xl: var(--s2a-border-radius-32);
     --s2a-border-radius-round: var(--s2a-border-radius-999);
 
     /* Border Width */
@@ -333,7 +337,7 @@
     /* Layout */
     --s2a-layout-sm: var(--s2a-spacing-80);
     --s2a-layout-md: var(--s2a-spacing-96);
-    --s2a-layout-lg: var(--s2a-spacing-124);
+    --s2a-layout-lg: var(--s2a-spacing-128);
     --s2a-layout-xl: var(--s2a-spacing-160);
     --s2a-layout-2xl: var(--s2a-spacing-240);
 

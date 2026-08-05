@@ -5,9 +5,105 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.19] - 2026-08-05
+
+### ✨ Added
+
+- **`--s2a-border-radius-22` primitive (22px)**
+  New design-vetted radius primitive that backs the retuned `lg` rung.
+- **`--s2a-border-radius-3xs` (2px) and `--s2a-border-radius-xl` (32px) semantic rungs**
+  Extend the border-radius t-shirt scale from 7 to 9 steps.
+
+### ♻️ Changed
+
+- **Border-radius t-shirt scale refactored.**
+  `md` (16px) is held as the anchor; rungs below it shift up one primitive step, and `lg` retargets from 32px to the new 22px. Corner radii across the system change — consumers must re-verify.
+
+  | Token | 0.0.18 | 0.0.19 |
+  |---|---|---|
+  | `--s2a-border-radius-3xs` | — | `2px` (new) |
+  | `--s2a-border-radius-2xs` | `2px` | `4px` |
+  | `--s2a-border-radius-xs` | `4px` | `8px` |
+  | `--s2a-border-radius-sm` | `8px` | `12px` |
+  | `--s2a-border-radius-md` | `16px` | `16px` (unchanged) |
+  | `--s2a-border-radius-lg` | `32px` | `22px` |
+  | `--s2a-border-radius-xl` | — | `32px` (new) |
+
+  Anything relying on the old `lg = 32px` must move to `xl`. Sub-`md` rungs (`2xs`, `xs`, `sm`) render larger and require a refactor pass in Milo / blocks. (MWPW-203041)
+
+---
+
+## [0.0.18] - 2026-08-03
+
+### ✨ Added
+
+- **`--s2a-spacing-128` primitive (128px)**
+  New design-vetted spacing primitive that replaces `124` in the semantic layout chain.
+
+### ♻️ Changed
+
+- **`--s2a-layout-lg` remapped `124px` → `128px`**
+  `--s2a-layout-lg` now aliases `var(--s2a-spacing-128)` instead of `var(--s2a-spacing-124)`. Consumers of `--s2a-layout-lg` (section / hero / footer vertical padding) render **4px larger**.
+
+  | Token | 0.0.17 | 0.0.18 |
+  |---|---|---|
+  | `--s2a-layout-lg` | `var(--s2a-spacing-124)` (124px) | `var(--s2a-spacing-128)` (128px) |
+
+### ⚠️ Deprecated
+
+- **`--s2a-spacing-124` deprecated (retained)**
+  `--s2a-spacing-124` (124px) is deprecated in favor of `--s2a-spacing-128`, but **retained** for backward compatibility while downstream consumers (Milo) migrate off it. Do not use in new work; it will be removed in a future release once all references are updated. (MWPW-202891)
+
+---
+
+## [0.0.17] - 2026-05-06
+
+### ♻️ Changed
+
+- **Typography tokens renamed: `title-*` → `heading-*`**
+  All responsive typography tokens have been renamed from the `title` prefix to `heading` across font-size, letter-spacing, and line-height axes and all breakpoints (sm/md/lg/xl). Semantic aliases updated:
+  - `--s2a-color-content-title` → `--s2a-color-content-heading`
+  - `--s2a-font-weight-title` → `--s2a-font-weight-heading`
+  - `--s2a-font-family-title` removed (no heading equivalent — family is inherited from the global font stack)
+
+  Consumers referencing any `--s2a-typography-*-title-N` CSS variable should update to `--s2a-typography-*-heading-N`.
+
+- **Dark mode border tokens recalibrated**
+  `--s2a-color-border-default`, `--s2a-color-border-strong`, `--s2a-color-border-knockout`, and `--s2a-color-border-inverse` values updated in the dark theme to better reflect the intended dark surface palette.
+
+---
+
 ## [0.0.16] - 2026-05-04
 
+### 💥 Breaking changes
+
+- **Letter-spacing primitive ramp restructured — `7xl`–`11xl` removed, `2xl`–`6xl` remapped**
+  The `--s2a-font-letter-spacing-Nxl` semantic alias chain was compressed as part of the Figma sync that powered the body/label/caption normalization below. Stops `7xl`–`11xl` have been deleted. Stops `2xl`–`6xl` now resolve to different px values than in 0.0.15:
+
+  | Alias | 0.0.15 | 0.0.16 |
+  |---|---|---|
+  | `--s2a-font-letter-spacing-2xl` | −1.2px | −1px |
+  | `--s2a-font-letter-spacing-3xl` | −1px | −0.96px |
+  | `--s2a-font-letter-spacing-4xl` | −0.96px | −0.48px |
+  | `--s2a-font-letter-spacing-5xl` | −0.48px | −0.2px |
+  | `--s2a-font-letter-spacing-6xl` | −0.2px | 0px |
+  | `--s2a-font-letter-spacing-7xl` | 0px | *(removed)* |
+  | `--s2a-font-letter-spacing-8xl` | 0.12px | *(removed)* |
+  | `--s2a-font-letter-spacing-9xl` | 0.14px | *(removed)* |
+  | `--s2a-font-letter-spacing-10xl` | 0.16px | *(removed)* |
+  | `--s2a-font-letter-spacing-11xl` | 0.24px | *(removed)* |
+
+  All `--s2a-typography-letter-spacing-*` responsive references were updated to compensate, so resolved px values for typography tokens are preserved. **Only affects consumers referencing the `--s2a-font-letter-spacing-Nxl` primitive aliases directly** — those references will now resolve to `unset`.
+
 ### 🐛 Bug fixes
+
+- **`title-4` line-height corrected at `lg` and `xl` breakpoints**
+  `--s2a-typography-line-height-title-4` was resolving to `--s2a-font-line-height-xl` (40px) at both `lg` and `xl`. Now aliases `--s2a-font-line-height-lg` (32px), matching the intended scale.
+
+  | Breakpoint | Was | Now |
+  |---|---|---|
+  | `lg` | `var(--s2a-font-line-height-xl)` (40px) | `var(--s2a-font-line-height-lg)` (32px) |
+  | `xl` | `var(--s2a-font-line-height-xl)` (40px) | `var(--s2a-font-line-height-lg)` (32px) |
 
 - **`title-5` font-size at `sm` breakpoint corrected to 18px**
   `--s2a-typography-font-size-title-5` at `sm` was resolving to 20px (same as `title-4`). Now aliases `--s2a-font-size-lg` (18px).

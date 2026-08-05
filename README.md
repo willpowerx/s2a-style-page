@@ -21,12 +21,39 @@ This page exists as a single source of truth for developers and designers to:
 | Field | Value |
 | --- | --- |
 | Package | `@adobecom/s2a-tokens` |
-| Verified version | `0.0.17` (tarball: `adobecom-s2a-tokens-0.0.17.tgz`) |
+| Verified version | `0.0.19` (tarball: `adobecom-s2a-tokens-0.0.19.tgz`) |
 | Repository | `github.com/adobecom/consonant` |
 | Registry | `npm.pkg.github.com` |
-| Last verified | 2026-05-26 |
+| Last verified | 2026-08-05 |
 
 The page sources tokens from a local `s2a-tokens.css` file — a consolidated hand-maintained mirror of the package's CSS output. When the package updates, this file should be re-synced against the new build artifacts and the Version History table updated.
+
+---
+
+## Changelog
+
+Page-level maintenance log — when the style page was re-synced against a new package version and what changed as a result. Mirrors the `#version-history` table in `index.html`; see `package/CHANGELOG.md` for the full upstream token changelog.
+
+### 2026-08-05 — Synced to `0.0.19`
+
+- Added `--s2a-border-radius-22` primitive
+- Border-radius semantic scale refactored from 7 to 9 steps: added `3xs` (2px) and `xl` (32px); `2xs` 2→4px, `xs` 4→8px, `sm` 8→12px, `lg` 32→22px, `md` unchanged
+- Added `--s2a-spacing-128` primitive; `--s2a-layout-lg` remapped 124px → 128px
+- Deprecated `--s2a-spacing-124` (retained for Milo backward-compat, not for new work)
+- Updated Border, Spacing, and Layout sections in `index.html`; added `s2a-r-3xs` / `s2a-r-xl` demo classes to `style.css`
+
+### 2026-05-26 — Synced to `0.0.17`
+
+- Typography tokens renamed `title-*` → `heading-*` across font-size, letter-spacing, and line-height (all breakpoints)
+- `--s2a-color-content-title` → `--s2a-color-content-heading`; `--s2a-font-weight-title` → `--s2a-font-weight-heading`; `--s2a-font-family-title` removed
+- Dark mode border tokens recalibrated (`border-default`, `border-strong`, `border-knockout`, `border-inverse`)
+
+### 2026-05-05 — Synced to `0.0.16`
+
+- Letter-spacing ramp restructured: `2xl`–`6xl` remapped, `7xl`–`11xl` removed
+- Added `--s2a-spacing-3xs`
+- Fixed `title-5` mobile font-size (20px → 18px) and `title-4` line-height at `lg`/`xl` breakpoints
+- Normalized body/label/caption/eyebrow letter-spacing to 0 across all breakpoints
 
 ---
 
