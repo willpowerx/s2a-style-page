@@ -21,10 +21,10 @@ This page exists as a single source of truth for developers and designers to:
 | Field | Value |
 | --- | --- |
 | Package | `@adobecom/s2a-tokens` |
-| Verified version | `0.0.19` (tarball: `adobecom-s2a-tokens-0.0.19.tgz`) |
+| Verified version | `0.0.20` (tarball: `adobecom-s2a-tokens-0.0.20.tgz`) |
 | Repository | `github.com/adobecom/consonant` |
 | Registry | `npm.pkg.github.com` |
-| Last verified | 2026-08-05 |
+| Last verified | 2026-08-14 |
 
 The page sources tokens from a local `s2a-tokens.css` file — a consolidated hand-maintained mirror of the package's CSS output. When the package updates, this file should be re-synced against the new build artifacts and the Version History table updated.
 
@@ -33,6 +33,12 @@ The page sources tokens from a local `s2a-tokens.css` file — a consolidated ha
 ## Changelog
 
 Page-level maintenance log — when the style page was re-synced against a new package version and what changed as a result. Mirrors the `#version-history` table in `index.html`; see `package/CHANGELOG.md` for the full upstream token changelog.
+
+### 2026-08-14 — Synced to `0.0.20`
+
+- Added `--s2a-section-spacing-*` — 14-rung scale (`none`, `5xs`–`5xl`) across all four breakpoints (`sm`/`md`/`lg`/`xl`)
+- Additive only — `--s2a-viewport-vertical-padding-*` is unchanged and still the token in active use; the new scale publishes what was previously a manually-implemented GWP rig, ahead of an eventual deprecation of the viewport-padding tokens
+- Added a "Section Spacing — Responsive Reference" table to the `#layout` section in `index.html`, alongside the existing viewport padding reference
 
 ### 2026-08-05 — Synced to `0.0.19`
 
@@ -100,7 +106,7 @@ The `s2a-tokens.css` file includes a small set of local additions beyond the pub
 | Typography | `#typography` | Full responsive type scale with breakpoint slider (Mobile / Tablet / Desktop) |
 | Buttons | `#buttons` | All `con-btn` variants, sizes, states, and S2A token anatomy |
 | Spacing | `#spacing` | Semantic t-shirt aliases with `var()` mappings and full primitive scale |
-| Layout | `#layout` | `--s2a-layout-*` tokens and responsive viewport padding reference table |
+| Layout | `#layout` | `--s2a-layout-*` tokens; responsive viewport padding and section spacing reference tables |
 | Border | `#border` | Border radius (semantic + primitive) and border width |
 | Opacity | `#opacity` | Semantic scrim/disabled aliases and full primitive scale |
 | Blur | `#blur` | Semantic blur tokens with backdrop-filter demos and primitive list |

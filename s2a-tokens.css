@@ -1,7 +1,7 @@
 /* =========================================
-   s2a Design Tokens — v0.0.19
-   Source: adobecom-s2a-tokens-0.0.19.tgz
-   Last verified: 2026-08-05
+   s2a Design Tokens — v0.0.20
+   Source: adobecom-s2a-tokens-0.0.20.tgz
+   Last verified: 2026-08-14
 
    Local extensions beyond the package:
      - Full font-family stacks (package ships single font name only)
@@ -639,6 +639,21 @@
     --s2a-viewport-vertical-padding-lg: var(--s2a-spacing-4xl);
     --s2a-viewport-vertical-padding-xl: var(--s2a-layout-sm);
 
+    --s2a-section-spacing-none: var(--s2a-spacing-none);
+    --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
+    --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
+    --s2a-section-spacing-3xs: var(--s2a-spacing-md);
+    --s2a-section-spacing-2xs: var(--s2a-spacing-md);
+    --s2a-section-spacing-xs: var(--s2a-spacing-md);
+    --s2a-section-spacing-sm: var(--s2a-spacing-lg);
+    --s2a-section-spacing-md: var(--s2a-spacing-md);
+    --s2a-section-spacing-lg: var(--s2a-spacing-lg);
+    --s2a-section-spacing-xl: var(--s2a-spacing-xl);
+    --s2a-section-spacing-2xl: var(--s2a-spacing-2xl);
+    --s2a-section-spacing-3xl: var(--s2a-spacing-2xl);
+    --s2a-section-spacing-4xl: var(--s2a-spacing-4xl);
+    --s2a-section-spacing-5xl: var(--s2a-layout-sm);
+
     --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
     --s2a-typography-font-size-super: var(--s2a-font-size-7xl);
@@ -723,6 +738,21 @@
         --s2a-viewport-vertical-padding-md: var(--s2a-layout-sm);
         --s2a-viewport-vertical-padding-lg: var(--s2a-layout-lg);
         --s2a-viewport-vertical-padding-xl: var(--s2a-layout-xl);
+
+        --s2a-section-spacing-none: var(--s2a-spacing-none);
+        --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
+        --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
+        --s2a-section-spacing-3xs: var(--s2a-spacing-md);
+        --s2a-section-spacing-2xs: var(--s2a-spacing-lg);
+        --s2a-section-spacing-xs: var(--s2a-spacing-lg);
+        --s2a-section-spacing-sm: var(--s2a-spacing-xl);
+        --s2a-section-spacing-md: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-lg: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-xl: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-2xl: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-3xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-5xl: var(--s2a-layout-xl);
 
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
@@ -810,6 +840,21 @@
         --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
         --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
 
+        --s2a-section-spacing-none: var(--s2a-spacing-none);
+        --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
+        --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
+        --s2a-section-spacing-3xs: var(--s2a-spacing-md);
+        --s2a-section-spacing-2xs: var(--s2a-spacing-lg);
+        --s2a-section-spacing-xs: var(--s2a-spacing-xl);
+        --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-md: var(--s2a-spacing-3xl);
+        --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-2xl: var(--s2a-layout-md);
+        --s2a-section-spacing-3xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
+        --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
+
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
         --s2a-typography-font-size-super: var(--s2a-font-size-11xl);
@@ -895,6 +940,21 @@
         --s2a-viewport-vertical-padding-md: var(--s2a-layout-lg);
         --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
         --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
+
+        --s2a-section-spacing-none: var(--s2a-spacing-none);
+        --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
+        --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
+        --s2a-section-spacing-3xs: var(--s2a-spacing-md);
+        --s2a-section-spacing-2xs: var(--s2a-spacing-lg);
+        --s2a-section-spacing-xs: var(--s2a-spacing-xl);
+        --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-md: var(--s2a-spacing-3xl);
+        --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-2xl: var(--s2a-layout-md);
+        --s2a-section-spacing-3xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
+        --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
 
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
