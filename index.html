@@ -53,7 +53,7 @@
                 <!-- Header Marquee (Hero) -->
                 <header class="marquee">
                     <h1 class="headline">S2A Design Tokens</h1>
-                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.20</p>
+                    <p class="subtitle">Visual reference for the Adobe.com sub-atomic design token system — v0.0.21</p>
                 </header>
 
                 <!-- ─────────────────────────────────────────────
@@ -74,6 +74,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td class="version-col">0.0.21</td>
+                                <td>2026-08-14</td>
+                                <td><code>adobecom-s2a-tokens-0.0.21.tgz</code></td>
+                                <td>
+                                    <span class="change-tag">--s2a-border-radius-6 primitive added (6px)</span>
+                                    <span class="change-tag">--s2a-layout-none semantic token added (0px)</span>
+                                    <span class="change-tag">iconbutton border/background tokens: typo fix (-defatul → -default), -outlined-on-dark and -solid-default split into explicit -on-dark-default / -on-light-default variants</span>
+                                    <span class="change-tag">--s2a-color-promo-cta-button-background-neutral-on-image-on-dark-active added</span>
+                                    <span class="change-tag">new component tokens: --s2a-hover-list-*, --s2a-side-by-side-*, --s2a-tab-side-padding (responsive, all 4 breakpoints)</span>
+                                    <span class="change-tag">--s2a-viewport-vertical-padding-* un-deprecated/restored upstream after being accidentally dropped from a Figma export in a prior cycle</span>
+                                    <span class="change-tag">⚠ regression: --s2a-section-spacing-* is non-monotonic at Mobile/Tablet and collapses 4 rungs to one value at Desktop/HD — reproduced as published; changelog is self-flagged "auto-generated, verify before merge." Flagged upstream, not fixed locally.</span>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="version-col">0.0.20</td>
                                 <td>2026-08-06</td>
@@ -1038,6 +1052,14 @@
                     <div class="spacing-subsection-label">Layout Scale — <code>--s2a-layout-*</code></div>
                     <div class="layout-grid">
                         <div class="layout-card-small">
+                            <div class="layout-demo-container"><div class="layout-box l-none"></div></div>
+                            <div class="token-details">
+                                <span class="token-name">--s2a-layout-none</span>
+                                <span class="token-value">0px</span>
+                                <span class="token-resolves-small">→ var(--s2a-spacing-0)</span>
+                            </div>
+                        </div>
+                        <div class="layout-card-small">
                             <div class="layout-demo-container"><div class="layout-box l-sm"></div></div>
                             <div class="token-details">
                                 <span class="token-name">--s2a-layout-sm</span>
@@ -1121,7 +1143,10 @@
                     <!-- Section spacing responsive reference -->
                     <div class="spacing-subsection-label" style="margin-top: var(--s2a-spacing-2xl);">Section Spacing — Responsive Reference</div>
                     <p style="color: var(--s2a-color-content-subtle); font-size:0.875rem; margin-bottom: var(--s2a-spacing-lg);">
-                        <code>--s2a-section-spacing-*</code> tokens (14-rung scale, added in v0.0.20) for section top/bottom padding on the responsive reflow rig. Additive alongside <code>--s2a-viewport-vertical-padding-*</code>, which remains unchanged.
+                        <code>--s2a-section-spacing-*</code> tokens (14-rung scale, added in v0.0.20) for section top/bottom padding on the responsive reflow rig. Additive alongside <code>--s2a-viewport-vertical-padding-*</code>, which is deprecated but still shipped upstream.
+                    </p>
+                    <p style="color: var(--s2a-color-content-utility-error, #d73220); font-size:0.8rem; margin-bottom: var(--s2a-spacing-lg); border-left: 3px solid currentColor; padding-left: var(--s2a-spacing-sm);">
+                        ⚠ <strong>Known issue in v0.0.21:</strong> the values below are reproduced exactly as published upstream and are not monotonic — e.g. Mobile <code>-2xs</code> (8px) is smaller than <code>-3xs</code> (16px), and <code>-2xl</code> (24px) is smaller than <code>-xl</code> (40px); Tablet <code>-md</code> (24px) is smaller than <code>-sm</code> (32px); Desktop/HD collapse <code>-xl</code> through <code>-4xl</code> to a single 128px value. This appears to be an unverified/regressed release upstream (the changelog is self-flagged "auto-generated... verify before merge") — flagged for the Consonant token team, not a page bug.
                     </p>
 
                     <div class="padding-reference-grid">
@@ -1131,13 +1156,13 @@
                             <div class="padding-scale-row"><span class="padding-scale-name">-5xs</span><span class="padding-scale-value">8px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-4xs</span><span class="padding-scale-value">12px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-3xs</span><span class="padding-scale-value">16px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-2xs</span><span class="padding-scale-value">16px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-xs</span><span class="padding-scale-value">16px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-2xs</span><span class="padding-scale-value">8px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-xs</span><span class="padding-scale-value">24px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-sm</span><span class="padding-scale-value">24px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">16px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">24px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">32px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">40px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">24px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">32px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">40px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">24px ⚠</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-3xl</span><span class="padding-scale-value">40px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-4xl</span><span class="padding-scale-value">64px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-5xl</span><span class="padding-scale-value">80px</span></div>
@@ -1151,12 +1176,12 @@
                             <div class="padding-scale-row"><span class="padding-scale-name">-2xs</span><span class="padding-scale-value">24px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-xs</span><span class="padding-scale-value">24px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-sm</span><span class="padding-scale-value">32px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">40px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">40px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">64px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">64px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-3xl</span><span class="padding-scale-value">80px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-4xl</span><span class="padding-scale-value">128px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">24px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">32px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">80px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">80px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-3xl</span><span class="padding-scale-value">64px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-4xl</span><span class="padding-scale-value">80px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-5xl</span><span class="padding-scale-value">160px</span></div>
                         </div>
                         <div class="padding-reference-card">
@@ -1170,10 +1195,10 @@
                             <div class="padding-scale-row"><span class="padding-scale-name">-sm</span><span class="padding-scale-value">40px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-md</span><span class="padding-scale-value">48px</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-lg</span><span class="padding-scale-value">64px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">80px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">96px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-3xl</span><span class="padding-scale-value">128px</span></div>
-                            <div class="padding-scale-row"><span class="padding-scale-name">-4xl</span><span class="padding-scale-value">160px</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-xl</span><span class="padding-scale-value">128px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-2xl</span><span class="padding-scale-value">128px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-3xl</span><span class="padding-scale-value">128px ⚠</span></div>
+                            <div class="padding-scale-row"><span class="padding-scale-name">-4xl</span><span class="padding-scale-value">128px ⚠</span></div>
                             <div class="padding-scale-row"><span class="padding-scale-name">-5xl</span><span class="padding-scale-value">240px</span></div>
                         </div>
                     </div>
@@ -1271,6 +1296,7 @@
                         <div class="border-primitive-row"><code>--s2a-border-radius-0</code><span>0px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-2</code><span>2px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-4</code><span>4px</span></div>
+                        <div class="border-primitive-row"><code>--s2a-border-radius-6</code><span>6px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-8</code><span>8px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-12</code><span>12px</span></div>
                         <div class="border-primitive-row"><code>--s2a-border-radius-16</code><span>16px</span></div>

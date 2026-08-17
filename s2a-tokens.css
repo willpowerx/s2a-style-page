@@ -1,7 +1,7 @@
 /* =========================================
-   s2a Design Tokens — v0.0.20
-   Source: adobecom-s2a-tokens-0.0.20.tgz
-   Last verified: 2026-08-14
+   s2a Design Tokens — v0.0.21
+   Source: adobecom-s2a-tokens-0.0.21.tgz
+   Last verified: 2026-08-16
 
    Local extensions beyond the package:
      - Full font-family stacks (package ships single font name only)
@@ -162,6 +162,7 @@
     --s2a-border-radius-0: 0;
     --s2a-border-radius-2: 2px;
     --s2a-border-radius-4: 4px;
+    --s2a-border-radius-6: 6px;
     --s2a-border-radius-8: 8px;
     --s2a-border-radius-12: 12px;
     --s2a-border-radius-16: 16px;
@@ -340,6 +341,7 @@
     --s2a-layout-lg: var(--s2a-spacing-128);
     --s2a-layout-xl: var(--s2a-spacing-160);
     --s2a-layout-2xl: var(--s2a-spacing-240);
+    --s2a-layout-none: var(--s2a-spacing-0);
 
     /* Font Family */
     --s2a-font-family-default: var(--s2a-font-family-adobe-clean);
@@ -487,7 +489,7 @@
     --s2a-color-iconbutton-background-accent-solid-on-light-default: var(--s2a-color-blue-900);
     --s2a-color-iconbutton-background-accent-solid-on-light-hover: var(--s2a-color-blue-1000);
     --s2a-color-iconbutton-background-primary-outlined-on-dark-active: var(--s2a-color-gray-25);
-    --s2a-color-iconbutton-background-primary-outlined-on-dark-defatul: var(--s2a-color-transparent-white-00);
+    --s2a-color-iconbutton-background-primary-outlined-on-dark-default: var(--s2a-color-transparent-white-00);
     --s2a-color-iconbutton-background-primary-outlined-on-dark-hover: var(--s2a-color-transparent-white-64);
     --s2a-color-iconbutton-background-primary-outlined-on-light-active: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-background-primary-outlined-on-light-default: var(--s2a-color-transparent-black-00);
@@ -505,14 +507,16 @@
     --s2a-color-iconbutton-background-primary-transparent-on-light-default: var(--s2a-color-transparent-black-00);
     --s2a-color-iconbutton-background-primary-transparent-on-light-hover: var(--s2a-color-transparent-black-08);
     --s2a-color-iconbutton-border-primary-outlined-default: var(--s2a-color-gray-1000);
-    --s2a-color-iconbutton-border-primary-outlined-on-dark: var(--s2a-color-gray-25);
-    --s2a-color-iconbutton-border-primary-solid-default: var(--s2a-color-transparent-white-12);
+    --s2a-color-iconbutton-border-primary-outlined-on-dark-default: var(--s2a-color-gray-25);
+    --s2a-color-iconbutton-border-primary-solid-on-dark-default: var(--s2a-color-gray-25);
+    --s2a-color-iconbutton-border-primary-solid-on-light-default: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-outlined-default: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-outlined-knockout: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-solid-default: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-solid-inverse: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-transparent-default: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-transparent-knockout: var(--s2a-color-gray-25);
+    --s2a-color-promo-cta-button-background-neutral-on-image-on-dark-active: var(--s2a-color-background-default);
 }
 
 
@@ -595,7 +599,7 @@
     --s2a-color-iconbutton-background-accent-solid-on-light-default: var(--s2a-color-blue-900);
     --s2a-color-iconbutton-background-accent-solid-on-light-hover: var(--s2a-color-blue-1000);
     --s2a-color-iconbutton-background-primary-outlined-on-dark-active: var(--s2a-color-gray-25);
-    --s2a-color-iconbutton-background-primary-outlined-on-dark-defatul: var(--s2a-color-transparent-white-24);
+    --s2a-color-iconbutton-background-primary-outlined-on-dark-default: var(--s2a-color-transparent-white-24);
     --s2a-color-iconbutton-background-primary-outlined-on-dark-hover: var(--s2a-color-transparent-white-64);
     --s2a-color-iconbutton-background-primary-outlined-on-light-active: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-background-primary-outlined-on-light-default: var(--s2a-color-transparent-white-00);
@@ -613,14 +617,16 @@
     --s2a-color-iconbutton-background-primary-transparent-on-light-default: var(--s2a-color-transparent-white-00);
     --s2a-color-iconbutton-background-primary-transparent-on-light-hover: var(--s2a-color-transparent-white-12);
     --s2a-color-iconbutton-border-primary-outlined-default: var(--s2a-color-gray-25);
-    --s2a-color-iconbutton-border-primary-outlined-on-dark: var(--s2a-color-gray-700);
-    --s2a-color-iconbutton-border-primary-solid-default: var(--s2a-color-gray-25);
+    --s2a-color-iconbutton-border-primary-outlined-on-dark-default: var(--s2a-color-gray-700);
+    --s2a-color-iconbutton-border-primary-solid-on-dark-default: var(--s2a-color-gray-25);
+    --s2a-color-iconbutton-border-primary-solid-on-light-default: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-outlined-default: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-outlined-knockout: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-solid-default: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-solid-inverse: var(--s2a-color-gray-1000);
     --s2a-color-iconbutton-content-primary-transparent-default: var(--s2a-color-gray-25);
     --s2a-color-iconbutton-content-primary-transparent-knockout: var(--s2a-color-gray-25);
+    --s2a-color-promo-cta-button-background-neutral-on-image-on-dark-active: var(--s2a-color-background-inverse);
 }
 
 
@@ -631,6 +637,22 @@
 
 /* Mobile — base (no media query) */
 :root {
+    --s2a-section-spacing-none: var(--s2a-spacing-none);
+    --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
+    --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
+    --s2a-section-spacing-3xs: var(--s2a-spacing-md);
+    --s2a-section-spacing-2xs: var(--s2a-spacing-xs);
+    --s2a-section-spacing-xs: var(--s2a-spacing-lg);
+    --s2a-section-spacing-sm: var(--s2a-spacing-lg);
+    --s2a-section-spacing-md: var(--s2a-spacing-lg);
+    --s2a-section-spacing-lg: var(--s2a-spacing-xl);
+    --s2a-section-spacing-xl: var(--s2a-spacing-2xl);
+    --s2a-section-spacing-2xl: var(--s2a-spacing-lg);
+    --s2a-section-spacing-3xl: var(--s2a-spacing-2xl);
+    --s2a-section-spacing-4xl: var(--s2a-spacing-4xl);
+    --s2a-section-spacing-5xl: var(--s2a-layout-sm);
+
+    /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
     --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
     --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-md);
     --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-lg);
@@ -638,21 +660,6 @@
     --s2a-viewport-vertical-padding-md: var(--s2a-spacing-2xl);
     --s2a-viewport-vertical-padding-lg: var(--s2a-spacing-4xl);
     --s2a-viewport-vertical-padding-xl: var(--s2a-layout-sm);
-
-    --s2a-section-spacing-none: var(--s2a-spacing-none);
-    --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
-    --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
-    --s2a-section-spacing-3xs: var(--s2a-spacing-md);
-    --s2a-section-spacing-2xs: var(--s2a-spacing-md);
-    --s2a-section-spacing-xs: var(--s2a-spacing-md);
-    --s2a-section-spacing-sm: var(--s2a-spacing-lg);
-    --s2a-section-spacing-md: var(--s2a-spacing-md);
-    --s2a-section-spacing-lg: var(--s2a-spacing-lg);
-    --s2a-section-spacing-xl: var(--s2a-spacing-xl);
-    --s2a-section-spacing-2xl: var(--s2a-spacing-2xl);
-    --s2a-section-spacing-3xl: var(--s2a-spacing-2xl);
-    --s2a-section-spacing-4xl: var(--s2a-spacing-4xl);
-    --s2a-section-spacing-5xl: var(--s2a-layout-sm);
 
     --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
@@ -726,19 +733,18 @@
     --s2a-layout-rich-media-content-measure-narrow: 320px;
     --s2a-layout-rich-media-content-measure-wide: 375px;
     --s2a-layout-rich-media-content-measure-none: 375px;
+
+    --s2a-hover-list-number-container-width: 24px;
+    --s2a-hover-list-padding-vertical: var(--s2a-spacing-xl);
+    --s2a-side-by-side-max-width-overlay: 320px;
+    --s2a-side-by-side-padding-overlay: var(--s2a-spacing-lg);
+    --s2a-side-by-side-padding-underlay: var(--s2a-spacing-sm);
+    --s2a-tab-side-padding: 20px;
 }
 
 /* Tablet — 1024px+ */
 @media (min-width: 1024px) {
     :root {
-        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
-        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
-        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-2xl);
-        --s2a-viewport-vertical-padding-sm: var(--s2a-spacing-4xl);
-        --s2a-viewport-vertical-padding-md: var(--s2a-layout-sm);
-        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-lg);
-        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-xl);
-
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -746,13 +752,22 @@
         --s2a-section-spacing-2xs: var(--s2a-spacing-lg);
         --s2a-section-spacing-xs: var(--s2a-spacing-lg);
         --s2a-section-spacing-sm: var(--s2a-spacing-xl);
-        --s2a-section-spacing-md: var(--s2a-spacing-2xl);
-        --s2a-section-spacing-lg: var(--s2a-spacing-2xl);
-        --s2a-section-spacing-xl: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-2xl: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-3xl: var(--s2a-layout-sm);
-        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-md: var(--s2a-spacing-lg);
+        --s2a-section-spacing-lg: var(--s2a-spacing-xl);
+        --s2a-section-spacing-xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-2xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-3xl: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-4xl: var(--s2a-layout-sm);
         --s2a-section-spacing-5xl: var(--s2a-layout-xl);
+
+        /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
+        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
+        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
+        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-2xl);
+        --s2a-viewport-vertical-padding-sm: var(--s2a-spacing-4xl);
+        --s2a-viewport-vertical-padding-md: var(--s2a-layout-sm);
+        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-lg);
+        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-xl);
 
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
@@ -826,20 +841,19 @@
         --s2a-layout-rich-media-content-measure-narrow: 456px;
         --s2a-layout-rich-media-content-measure-wide: 848px;
         --s2a-layout-rich-media-content-measure-none: 848px;
+
+        --s2a-hover-list-number-container-width: 32px;
+        --s2a-hover-list-padding-vertical: var(--s2a-spacing-lg);
+        --s2a-side-by-side-max-width-overlay: 250px;
+        --s2a-side-by-side-padding-overlay: var(--s2a-spacing-lg);
+        --s2a-side-by-side-padding-underlay: var(--s2a-spacing-md);
+        --s2a-tab-side-padding: var(--s2a-spacing-lg);
     }
 }
 
 /* Desktop — 1280px+ */
 @media (min-width: 1280px) {
     :root {
-        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
-        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
-        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-4xl);
-        --s2a-viewport-vertical-padding-sm: var(--s2a-layout-sm);
-        --s2a-viewport-vertical-padding-md: var(--s2a-layout-lg);
-        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
-        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
-
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -849,11 +863,20 @@
         --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
         --s2a-section-spacing-md: var(--s2a-spacing-3xl);
         --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-xl: var(--s2a-layout-sm);
-        --s2a-section-spacing-2xl: var(--s2a-layout-md);
+        --s2a-section-spacing-xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-2xl: var(--s2a-layout-lg);
         --s2a-section-spacing-3xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
+        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
         --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
+
+        /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
+        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
+        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
+        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-4xl);
+        --s2a-viewport-vertical-padding-sm: var(--s2a-layout-sm);
+        --s2a-viewport-vertical-padding-md: var(--s2a-layout-lg);
+        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
+        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
 
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
@@ -927,20 +950,19 @@
         --s2a-layout-rich-media-content-measure-narrow: 512px;
         --s2a-layout-rich-media-content-measure-wide: 1192px;
         --s2a-layout-rich-media-content-measure-none: 1192px;
+
+        --s2a-hover-list-number-container-width: 64px;
+        --s2a-hover-list-padding-vertical: var(--s2a-spacing-lg);
+        --s2a-side-by-side-max-width-overlay: 400px;
+        --s2a-side-by-side-padding-overlay: var(--s2a-spacing-xl);
+        --s2a-side-by-side-padding-underlay: var(--s2a-spacing-lg);
+        --s2a-tab-side-padding: var(--s2a-spacing-lg);
     }
 }
 
 /* HD — 1441px+ */
 @media (min-width: 1441px) {
     :root {
-        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
-        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
-        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-4xl);
-        --s2a-viewport-vertical-padding-sm: var(--s2a-layout-sm);
-        --s2a-viewport-vertical-padding-md: var(--s2a-layout-lg);
-        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
-        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
-
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -950,11 +972,20 @@
         --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
         --s2a-section-spacing-md: var(--s2a-spacing-3xl);
         --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-xl: var(--s2a-layout-sm);
-        --s2a-section-spacing-2xl: var(--s2a-layout-md);
+        --s2a-section-spacing-xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-2xl: var(--s2a-layout-lg);
         --s2a-section-spacing-3xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
+        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
         --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
+
+        /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
+        --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
+        --s2a-viewport-vertical-padding-2xs: var(--s2a-spacing-xl);
+        --s2a-viewport-vertical-padding-xs: var(--s2a-spacing-4xl);
+        --s2a-viewport-vertical-padding-sm: var(--s2a-layout-sm);
+        --s2a-viewport-vertical-padding-md: var(--s2a-layout-lg);
+        --s2a-viewport-vertical-padding-lg: var(--s2a-layout-xl);
+        --s2a-viewport-vertical-padding-xl: var(--s2a-layout-2xl);
 
         --s2a-layout-guide-gap: var(--s2a-spacing-xs);
 
@@ -1028,5 +1059,12 @@
         --s2a-layout-rich-media-content-measure-narrow: 512px;
         --s2a-layout-rich-media-content-measure-wide: 1480px;
         --s2a-layout-rich-media-content-measure-none: 1480px;
+
+        --s2a-hover-list-number-container-width: 64px;
+        --s2a-hover-list-padding-vertical: var(--s2a-spacing-lg);
+        --s2a-side-by-side-max-width-overlay: 400px;
+        --s2a-side-by-side-padding-overlay: var(--s2a-spacing-2xl);
+        --s2a-side-by-side-padding-underlay: var(--s2a-spacing-2xl);
+        --s2a-tab-side-padding: var(--s2a-spacing-lg);
     }
 }

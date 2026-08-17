@@ -880,6 +880,10 @@ p {
     border-radius: 4px;
 }
 
+.layout-box.l-none {
+    width: 0px;
+}
+
 .layout-box.l-sm {
     width: 80px;
 }
