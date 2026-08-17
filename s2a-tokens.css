@@ -637,20 +637,26 @@
 
 /* Mobile — base (no media query) */
 :root {
+    /* --s2a-section-spacing-* — locally patched on top of v0.0.21 to restore monotonicity; see docs/audits/section-spacing-scale-fix-proposal-2026-08-17.md in consonant. Pending upstream fix. */
     --s2a-section-spacing-none: var(--s2a-spacing-none);
     --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
     --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
     --s2a-section-spacing-3xs: var(--s2a-spacing-md);
-    --s2a-section-spacing-2xs: var(--s2a-spacing-xs);
-    --s2a-section-spacing-xs: var(--s2a-spacing-lg);
+    --s2a-section-spacing-2xs: var(--s2a-spacing-md);
+    --s2a-section-spacing-xs: var(--s2a-spacing-md);
     --s2a-section-spacing-sm: var(--s2a-spacing-lg);
     --s2a-section-spacing-md: var(--s2a-spacing-lg);
-    --s2a-section-spacing-lg: var(--s2a-spacing-xl);
-    --s2a-section-spacing-xl: var(--s2a-spacing-2xl);
-    --s2a-section-spacing-2xl: var(--s2a-spacing-lg);
+    --s2a-section-spacing-lg: var(--s2a-spacing-lg);
+    --s2a-section-spacing-xl: var(--s2a-spacing-xl);
+    --s2a-section-spacing-2xl: var(--s2a-spacing-2xl);
     --s2a-section-spacing-3xl: var(--s2a-spacing-2xl);
     --s2a-section-spacing-4xl: var(--s2a-spacing-4xl);
     --s2a-section-spacing-5xl: var(--s2a-layout-sm);
+
+    /* --s2a-section-spacing-pivot-* — new: components that converge on a shared desktop ceiling via different mobile/tablet ramps. Not a scale; no ordering constraint between these three. */
+    --s2a-section-spacing-pivot-sm: var(--s2a-spacing-lg);
+    --s2a-section-spacing-pivot-md: var(--s2a-spacing-2xl);
+    --s2a-section-spacing-pivot-lg: var(--s2a-spacing-4xl);
 
     /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
     --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
@@ -745,6 +751,7 @@
 /* Tablet — 1024px+ */
 @media (min-width: 1024px) {
     :root {
+        /* --s2a-section-spacing-* — locally patched on top of v0.0.21 to restore monotonicity; see docs/audits/section-spacing-scale-fix-proposal-2026-08-17.md in consonant. Pending upstream fix. */
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -752,13 +759,18 @@
         --s2a-section-spacing-2xs: var(--s2a-spacing-lg);
         --s2a-section-spacing-xs: var(--s2a-spacing-lg);
         --s2a-section-spacing-sm: var(--s2a-spacing-xl);
-        --s2a-section-spacing-md: var(--s2a-spacing-lg);
-        --s2a-section-spacing-lg: var(--s2a-spacing-xl);
-        --s2a-section-spacing-xl: var(--s2a-layout-sm);
-        --s2a-section-spacing-2xl: var(--s2a-layout-sm);
-        --s2a-section-spacing-3xl: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-4xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-md: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-lg: var(--s2a-spacing-2xl);
+        --s2a-section-spacing-xl: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-2xl: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-3xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
         --s2a-section-spacing-5xl: var(--s2a-layout-xl);
+
+        /* --s2a-section-spacing-pivot-* — new: components that converge on a shared desktop ceiling via different mobile/tablet ramps. Not a scale; no ordering constraint between these three. */
+        --s2a-section-spacing-pivot-sm: var(--s2a-layout-sm);
+        --s2a-section-spacing-pivot-md: var(--s2a-spacing-4xl);
+        --s2a-section-spacing-pivot-lg: var(--s2a-layout-sm);
 
         /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
         --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
@@ -854,6 +866,7 @@
 /* Desktop — 1280px+ */
 @media (min-width: 1280px) {
     :root {
+        /* --s2a-section-spacing-* — locally patched on top of v0.0.21 to restore monotonicity; see docs/audits/section-spacing-scale-fix-proposal-2026-08-17.md in consonant. Pending upstream fix. */
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -863,11 +876,16 @@
         --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
         --s2a-section-spacing-md: var(--s2a-spacing-3xl);
         --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-2xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-2xl: var(--s2a-layout-md);
         --s2a-section-spacing-3xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
         --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
+
+        /* --s2a-section-spacing-pivot-* — new: components that converge on a shared desktop ceiling via different mobile/tablet ramps. Not a scale; no ordering constraint between these three. */
+        --s2a-section-spacing-pivot-sm: var(--s2a-layout-lg);
+        --s2a-section-spacing-pivot-md: var(--s2a-layout-lg);
+        --s2a-section-spacing-pivot-lg: var(--s2a-layout-lg);
 
         /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
         --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
@@ -963,6 +981,7 @@
 /* HD — 1441px+ */
 @media (min-width: 1441px) {
     :root {
+        /* --s2a-section-spacing-* — locally patched on top of v0.0.21 to restore monotonicity; see docs/audits/section-spacing-scale-fix-proposal-2026-08-17.md in consonant. Pending upstream fix. */
         --s2a-section-spacing-none: var(--s2a-spacing-none);
         --s2a-section-spacing-5xs: var(--s2a-spacing-xs);
         --s2a-section-spacing-4xs: var(--s2a-spacing-sm);
@@ -972,11 +991,16 @@
         --s2a-section-spacing-sm: var(--s2a-spacing-2xl);
         --s2a-section-spacing-md: var(--s2a-spacing-3xl);
         --s2a-section-spacing-lg: var(--s2a-spacing-4xl);
-        --s2a-section-spacing-xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-2xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-xl: var(--s2a-layout-sm);
+        --s2a-section-spacing-2xl: var(--s2a-layout-md);
         --s2a-section-spacing-3xl: var(--s2a-layout-lg);
-        --s2a-section-spacing-4xl: var(--s2a-layout-lg);
+        --s2a-section-spacing-4xl: var(--s2a-layout-xl);
         --s2a-section-spacing-5xl: var(--s2a-layout-2xl);
+
+        /* --s2a-section-spacing-pivot-* — new: components that converge on a shared desktop ceiling via different mobile/tablet ramps. Not a scale; no ordering constraint between these three. */
+        --s2a-section-spacing-pivot-sm: var(--s2a-layout-lg);
+        --s2a-section-spacing-pivot-md: var(--s2a-layout-lg);
+        --s2a-section-spacing-pivot-lg: var(--s2a-layout-lg);
 
         /* --s2a-viewport-vertical-padding-* — deprecated in favor of --s2a-section-spacing-*, retained upstream (v0.0.21) after being unintentionally dropped from a Figma export */
         --s2a-viewport-vertical-padding-none: var(--s2a-spacing-none);
